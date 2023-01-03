@@ -1,0 +1,24 @@
+#logoutButton {
+    color: #d32323;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #d32323;
+    padding: 24px 40px;
+    pointer-events: auto;
+}
+
+#seslinks {
+ margin-left: 50px;  
+ /* margin-right: 50px; */
+}
+
+.navbutton {
+    color: white
+}
+
+#logoutbutton {
+    color: #d32323;
+}
