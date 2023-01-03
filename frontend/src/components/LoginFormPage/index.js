@@ -31,6 +31,30 @@ function LoginFormPage() {
             });
 
     }
+    
+    const setDemo = () => {
+        setCredential(`Demo-lition`);
+        setPassword(`password`);
+
+    }
+
+    const handleDemo = (e) => {
+        e.preventDefault();
+        setErrors([]);
+        return dispatch(sessionActions.login({credential, password}))
+            .catch(async (res) => {
+                let data;
+                try {
+                    data = await res.clone().json();
+                } catch {
+                    data = await res.text();
+                }
+                if (data?.errors) setErrors(data.errors);
+                else if (data) setErrors([data]);
+                else setErrors([res.statusText]);
+            });
+
+    }
 
 
     return (
@@ -47,10 +71,11 @@ function LoginFormPage() {
                     <input type="password" value = {password} onChange={(e)=> setPassword(e.target.value)} required placeholder="Password"></input>
                 
                 <br></br>
-                <button type="submit" id ="button">Log In</button>
+                <button type="submit" className ="button">Log In</button>
             </form>
-            <form id="form">
-                <button id ="button">Demo User</button>\
+
+            <form onSubmit={handleDemo} id="form2">
+                <button onClick={()=> setDemo()} className ="button" >Demo User</button>
             </form>
         </>
     )

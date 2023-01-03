@@ -15,12 +15,12 @@ function Navigation(){
         sessionLinks = (
             <>
                 
-                    <NavLink to="/login" id ="seslinks" class="navbutton">
+                    <NavLink to="/login" id ="seslinks" className="navbutton">
                         <i class="fa-sharp fa-solid fa-right-to-bracket"></i>
                     </NavLink>
                     
                
-                    <NavLink to="/signup" id ="seslinks" class="navbutton">
+                    <NavLink to="/signup" id ="seslinks" className="navbutton">
                         <i class="fa-sharp fa-solid fa-user-plus"></i>
                     </NavLink>
                 
@@ -34,7 +34,7 @@ function Navigation(){
     return (
         <>
             <ul id ="navbar">
-                    <NavLink exact to="/" class="navbutton">
+                    <NavLink exact to="/" className="navbutton">
                         <i class="fa-sharp fa-solid fa-house"></i>
                     </NavLink>
                 <div>
