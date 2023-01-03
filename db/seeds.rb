@@ -30,6 +30,22 @@ ApplicationRecord.transaction do
         password: 'password'
       }) 
     end
+
+    puts "Creating Businesses..."
+
+    Business.create!({
+      name: "Tire Shop",
+      description: "Place to get tires",
+      lat: 37.586262286335604,
+      long: -122.01672881495385
+    })
+
+    Business.create!({
+      name: "Groceries",
+      description: "Get groceries while getting harassed by homeless people!",
+      lat: 37.58760871881577,
+      long: -122.0195159006921,
+    })
   
     puts "Done!"
   end
