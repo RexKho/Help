@@ -97,6 +97,33 @@ ApplicationRecord.transaction do
       lat: 37.58828535731148,
       long: -122.02332543918732,
     })
+
+    Business.create!({
+      name: "Apple Union Square",
+      description: "Buy a new iPhone and become better than everyone",
+      lat: 37.78870864931722,
+      long: -122.40717275465131,
+    })
+
+    Business.create!({
+      name: "Union Square",
+      description: "If you like stepping on poop, this is the place for you",
+      lat: 37.7879189576103,
+      long: -122.40748235823166,
+    })
+
+    Business.create!({
+      name: "Moncler",
+      description: "For people who like to burn 2k on a jacket",
+      lat: 37.78782013272684,
+      long: -122.40652130392692,
+    })
+    Business.create!({
+      name: "Macy's",
+      description: "Shop at your hearts content. We pay our employees ok",
+      lat: 37.78674617164739,
+      long: -122.40743586361053,
+    })
   
     puts "Done!"
   end

@@ -1,20 +1,22 @@
 import React from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect, Link } from 'react-router-dom';
 
 const BusinessListItem = ({ business }) => {
 
     const history = useHistory();
+    
 
     const handleClick = (e) => {
-        history.push(`/businesses/${business.id}`);
+        // history.push(`/businesses/${business.id}`);
+        <Redirect to={`/businesses/${business.id}`}/>
         return e.preventDefault;
-        
     };
 
     return (
-        <div onClick={handleClick} className="business-container">
-            <h2>{business.name}</h2>
-            <h2>Description: {business.description}</h2>
+        <div  className="business-container">
+        {/* <div onClick={handleClick} className="business-container"> */}
+            <Link to={`/businesses/${business.id}`} id="businessName">{business.name}</Link> 
+            <h2 id="businessDescription">{business.description}</h2>
         </div>
     );
     };

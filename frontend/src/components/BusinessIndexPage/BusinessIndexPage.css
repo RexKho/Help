@@ -1,7 +1,7 @@
 .business-container {
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 25%;
+    /* flex-wrap: wrap;
+    justify-content: space-evenly; */
+    width: 33%;
     border: 1px solid #ebebeb;
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
@@ -18,4 +18,37 @@
     overflow-wrap: break-word !important;
     color: rgba(45,46,47,1);
    
+}
+
+#module{
+    display: flex;
+    justify-content: space-evenly;  
+    flex-wrap: wrap;
+    
+    /* float: left;
+    width: 33.333%; */
+    padding: 20px;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    
+}
+
+#businessName{
+    font-weight: Bold;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    border-radius: 3px;
+    text-decoration: none;
+    color: rgba(2,122,151,1);
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#businessDescription {
+    padding: 10px;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
 }
