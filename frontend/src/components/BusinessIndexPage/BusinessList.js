@@ -4,7 +4,7 @@ import BusinessListItem from './BusinessListItem';
 const BusinessList = ({businesses}) => {
     return (
         <div>
-            <h1>Businesses</h1>
+            <h1 id="title">Businesses</h1>
             {businesses?.map((business, idx)=>(
                 <BusinessListItem business={business} key={idx} />
             )

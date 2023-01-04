@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBusinesses } from "../../store/business";
 import BusinessList from "./BusinessList";
+import './BusinessIndexPage.css';
 
 
 const BusinessIndexPage = () => {

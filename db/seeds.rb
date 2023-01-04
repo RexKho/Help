@@ -21,6 +21,36 @@ ApplicationRecord.transaction do
       email: 'demo@user.io', 
       password: 'password'
     )
+
+    User.create!(
+      username: 'SallyHere', 
+      email: 'Sally@gmail.com', 
+      password: '1234password'
+    )
+
+    User.create!(
+      username: 'Coco', 
+      email: 'coco@gmail.com', 
+      password: 'cocococo'
+    )
+
+    User.create!(
+      username: 'Bellawoof', 
+      email: 'Bellaaaaaaa@gmail.com', 
+      password: 'iLikeTreats'
+    )
+
+    User.create!(
+      username: 'Oscar', 
+      email: 'OscarFish@gmail.com', 
+      password: 'Feedmenow'
+    )
+
+    User.create!(
+      username: 'TheRealCoco', 
+      email: 'TheonlyCoco@gmail.com', 
+      password: 'IamCOCO'
+    )
   
     # More users
     10.times do 
@@ -34,17 +64,38 @@ ApplicationRecord.transaction do
     puts "Creating Businesses..."
 
     Business.create!({
-      name: "Tire Shop",
+      name: "Americas Tire",
       description: "Place to get tires",
       lat: 37.586262286335604,
       long: -122.01672881495385
     })
 
     Business.create!({
-      name: "Groceries",
-      description: "Get groceries while getting harassed by homeless people!",
+      name: "Safeway",
+      description: "Get groceries now!",
       lat: 37.58760871881577,
       long: -122.0195159006921,
+    })
+
+    Business.create!({
+      name: "Donut Delight Express",
+      description: "Cheap dimsum yummy yummy",
+      lat: 37.58709413010123,
+      long: -122.01947841314349,
+    })
+
+    Business.create!({
+      name: "Costco",
+      description: "You don't know what costco is?",
+      lat: 37.616243058198734,
+      long: -122.08920763598888
+    })
+
+    Business.create!({
+      name: "Ramen Shu",
+      description: "We are a pretty good ramen place. Come here!",
+      lat: 37.58828535731148,
+      long: -122.02332543918732,
     })
   
     puts "Done!"
