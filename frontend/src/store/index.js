@@ -9,7 +9,7 @@ import sessionReducer from './session';
 const rootReducer = combineReducers({
     session: sessionReducer,
     review: reviewsReducer,
-    business: businessReducer
+    businesses: businessReducer
 });
 
 let enhancer;

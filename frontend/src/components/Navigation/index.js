@@ -16,12 +16,12 @@ function Navigation(){
             <>
                 
                     <NavLink to="/login" id ="seslinks" className="navbutton">
-                        <i class="fa-sharp fa-solid fa-right-to-bracket"></i>
+                        <i className="fa-sharp fa-solid fa-right-to-bracket"></i>
                     </NavLink>
                     
                
                     <NavLink to="/signup" id ="seslinks" className="navbutton">
-                        <i class="fa-sharp fa-solid fa-user-plus"></i>
+                        <i className="fa-sharp fa-solid fa-user-plus"></i>
                     </NavLink>
                 
             </>
@@ -35,7 +35,7 @@ function Navigation(){
         <>
             <ul id ="navbar">
                     <NavLink exact to="/" className="navbutton">
-                        <i class="fa-sharp fa-solid fa-house"></i>
+                        <i className="fa-sharp fa-solid fa-house"></i>
                     </NavLink>
                 <div>
                     {sessionLinks}
