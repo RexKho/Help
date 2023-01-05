@@ -8,4 +8,18 @@
     word-break: break-word !important;
     overflow-wrap: break-word !important;
     display: inline;
+    margin-left: 10%;
+}
+
+#busDes{
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    margin-left: 15%;
+}
+
+.coordinates{
+    font-size: 12px;
+    margin-left: 10%;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }

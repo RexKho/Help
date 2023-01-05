@@ -5,9 +5,9 @@ import { fetchBusiness } from "../../store/business";
 import Review from "../ReviewShow";
 import './BusinessShowPage.css';
 
+
 const BusinessShowPage = () => {
     const { businessId } = useParams();
-    
     const business = useSelector((store) => store.businesses[businessId]);
     const dispatch = useDispatch();
     // console.log(business.reviews)
@@ -18,6 +18,8 @@ const BusinessShowPage = () => {
         dispatch(fetchBusiness(businessId));
     }, [dispatch, businessId])
 
+   
+
 
 
     return (
@@ -26,15 +28,10 @@ const BusinessShowPage = () => {
             <h2 id="busDes">{business.description}</h2>
             <h3 className="coordinates">Lat: {business.lat}</h3>
             <h3 className="coordinates">Long: {business.long}</h3>
-            
-            
-                
 
                 {business.reviews?.map((review, idx) => (
                     <Review review ={review} key={idx}/>
-                ))}
-                
-            
+                )) }
             
         </>
     )
