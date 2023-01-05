@@ -1,0 +1,51 @@
+#ReviewBody{
+    /* margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    vertical-align: baseline; */
+    color: rgba(45,46,47,1);
+    letter-spacing: 0px;
+    padding: 10px;
+    margin: 10px;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+#rating{
+    /* border-color: #ebebeb;
+    border-spacing: 8px 0;
+    border: 11px;
+    margin-left: 8px;
+    margin-right: 8px; */
+    border-top: solid;
+    border-color: #ebebeb;
+    margin: 10px;
+    font-size: 125%;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+#time{
+    /* border-color: #ebebeb;
+    border-spacing: 8px 0;
+    border: 11px;
+    margin-left: 8px;
+    margin-right: 8px; */
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 90%;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+#wrote{
+    font-size: 80%;
+}
+
+#reviewBodyText{
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+#username{
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    border-radius: 3px;
+    font-weight: bold;
+}

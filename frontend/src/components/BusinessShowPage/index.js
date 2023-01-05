@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"
 import { fetchBusiness } from "../../store/business";
+import Review from "../ReviewShow";
 import './BusinessShowPage.css';
 
 const BusinessShowPage = () => {
@@ -9,9 +10,9 @@ const BusinessShowPage = () => {
     
     const business = useSelector((store) => store.businesses[businessId]);
     const dispatch = useDispatch();
-
-    console.log("testing business")
-    console.log(business)
+    // console.log(business.reviews)
+    // console.log("testing business")
+    // console.log(business)
 
     useEffect(()=>{
         dispatch(fetchBusiness(businessId));
@@ -25,6 +26,15 @@ const BusinessShowPage = () => {
             <h2 id="busDes">{business.description}</h2>
             <h3 className="coordinates">Lat: {business.lat}</h3>
             <h3 className="coordinates">Long: {business.long}</h3>
+            
+            
+                
+
+                {business.reviews?.map((review, idx) => (
+                    <Review review ={review} key={idx}/>
+                ))}
+                
+            
             
         </>
     )
