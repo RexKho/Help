@@ -3,7 +3,7 @@ json.set! @business.id do
     json.reviews do 
         json.array! @business.reviews do |review|
             json.extract! review, :id, :rating, :body, :created_at 
-            json.author review.author.username
+            json.author review.user.username
         end
     end
 end

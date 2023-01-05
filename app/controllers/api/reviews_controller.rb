@@ -16,7 +16,8 @@ class Api::ReviewsController < ApplicationController
 
     def destroy 
         @review = Review.find(params[:id])
-        @author_name = @review.author.username 
+        user = User.find_by_id(@review.author_id)
+        @author_name = user.username
         if @review.author_id == current_user.id 
             if @review.destroy 
                 render :show 
@@ -31,6 +32,6 @@ class Api::ReviewsController < ApplicationController
     private 
 
     def review_params 
-        params.require(:review).permit(:rating, :body, :business_id)
+        params.require(:review).permit(:rating, :body, :business_id, :author_id)
     end
 end

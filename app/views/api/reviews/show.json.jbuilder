@@ -3,4 +3,3 @@ json.set! @review.id do
     json.author @author_name
 end
 
-# json.average_rating @review.business.average_rating
