@@ -2,6 +2,7 @@
     /* flex-wrap: wrap;
     justify-content: space-evenly; */
     width: 33%;
+    
     border: 1px solid #ebebeb;
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
@@ -27,7 +28,7 @@
     
     /* float: left;
     width: 33.333%; */
-    padding: 20px;
+    padding: 40px;
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 14px;
     font-weight: 400;
