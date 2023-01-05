@@ -9,6 +9,8 @@ import './BusinessIndexPage.css';
 
 const BusinessIndexPage = () => {
 
+
+
     const businesses = useSelector((store)=> Object.values(store.businesses));
     const dispatch = useDispatch();
 

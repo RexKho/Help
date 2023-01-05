@@ -5,12 +5,12 @@ class Api::BusinessesController < ApplicationController
     end
 
     def show 
-        @business = Business.find(business_params)
+        @business = Business.find(params[:id])
         render :show
     end
 
     private 
     def business_params 
-        params.require(:business).permit(:name, :description, :lat, :long)
+        params.require(:business).permit(:id, :name, :description, :lat, :long)
     end
 end

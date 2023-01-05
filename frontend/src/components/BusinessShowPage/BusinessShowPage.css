@@ -1,0 +1,11 @@
+#busName{
+    /* color: #fff; */
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    line-height: 56px;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    display: inline;
+}

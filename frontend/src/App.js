@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import BusinessIndexPage from "./components/BusinessIndexPage";
 import BusinessShowPage from "./components/BusinessShowPage";
+import GoogleMapp from "./components/GoogleMap";
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
     <Navigation />
       <Switch>
         <Route exact path="/">
+          {/* <GoogleMapp /> */}
           <BusinessIndexPage />
         </Route>
-        <Route path="/business/:businessId">
+        <Route path="/businesses/:businessId">
           <BusinessShowPage />
         </Route>
         <Route path='/login'>

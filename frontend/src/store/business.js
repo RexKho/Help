@@ -23,7 +23,7 @@ export const fetchBusinesses = () => async (dispatch) => {
 };
 
 export const fetchBusiness = (businessId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/business/${businessId}`);
+    const response = await csrfFetch(`/api/businesses/${businessId}`);
     if (response.ok) {
         const business = await response.json();
         dispatch(addBusiness(business));

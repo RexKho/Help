@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory, Redirect, Link } from 'react-router-dom';
 
 const BusinessListItem = ({ business }) => {
-
+    
     const history = useHistory();
     
 
