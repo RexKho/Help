@@ -124,6 +124,51 @@ ApplicationRecord.transaction do
       lat: 37.78674617164739,
       long: -122.40743586361053,
     })
+
+    puts "Creating Reviews..."
+
+    Review.create!({
+      rating: 5,
+      body: "I LOVE TIRES OMG I COME HERE EVERYDAY",
+      author_id: 2,
+      business_id: 1
+    })
+
+    Review.create!({
+      rating: 3,
+      body: "Just a tire shop. Not that great",
+      author_id: 3,
+      business_id: 1
+    })
+
+    Review.create!({
+      rating: 4,
+      body: "Good deals on tires. Would come here again.",
+      author_id: 4,
+      business_id: 1
+    })
+
+    Review.create!({
+      rating: 1,
+      body: "Couldn't even get inside, people sleeping blocked the door.",
+      author_id: 2,
+      business_id: 2
+    })
+
+    Review.create!({
+      rating: 5,
+      body: "I love slumber parties while getting groceries. DEFINETELY would come again. ",
+      author_id: 5,
+      business_id: 2
+    })
+
+    Review.create!({
+      rating: 4,
+      body: "Good cheap dimsum. Come here for a quick fix.",
+      author_id: 6,
+      business_id: 3
+    })
+
   
     puts "Done!"
   end

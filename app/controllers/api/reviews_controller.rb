@@ -4,7 +4,10 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @review.author_id = current_user.id 
         if @review.save 
-            @author_name = @review.author.username
+            # business = Business.find_by_id(@review.business_id)
+            # business.add_review(@review)
+            user = User.find_by_id(@review.author_id)
+            @author_name = user.username
             render :show
         else 
             render json: {errors: @review.errors.full_messages }, status: :unauthorized

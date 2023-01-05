@@ -25,6 +25,7 @@ const BusinessShowPage = () => {
             <h2 id="busDes">{business.description}</h2>
             <h3 className="coordinates">Lat: {business.lat}</h3>
             <h3 className="coordinates">Long: {business.long}</h3>
+            
         </>
     )
 }
