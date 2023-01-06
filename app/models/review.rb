@@ -12,4 +12,6 @@ class Review < ApplicationRecord
     class_name: :Business,
     foreign_key: :business_id
 
+    has_many_attached :photos
+
 end
