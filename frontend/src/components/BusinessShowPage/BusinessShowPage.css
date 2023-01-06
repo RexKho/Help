@@ -23,3 +23,23 @@
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
+#reviewPicture{
+    max-height: 200px;
+    /* max-width: 50px; */
+}
+
+.scroller{
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, .2) 0px 22px 70px 4px;
+    border-radius: 8px;
+    width: 85vw;
+    max-width: 900px;
+    margin: auto;
+}
+
+.images-container{
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+}

@@ -37,8 +37,12 @@ const BusinessShowPage = () => {
 
             {business.reviews?.map((review, idx) => (
                 <> 
-                    {review.photoUrl?.map((url, idx) => <img src={url} alt="picture" key={idx} />)}
+                    <div className="scroller">
+                        <div className="images-container">
+                            {review.photoUrl?.map((url, idx) => <img src={url} alt="picture" key={idx} id="reviewPicture"/>)}
+                        </div>
                     <Review review ={review} key={idx}/>  
+                    </div>
                 </>
             ))}
 
