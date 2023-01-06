@@ -29,23 +29,19 @@ const BusinessShowPage = () => {
             <h3 className="coordinates">Lat: {business.lat}</h3>
             <h3 className="coordinates">Long: {business.long}</h3>
 
-            {business.reviews?.map((review) => (
+            {/* {business.reviews?.map((review) => (
                 review.photoUrl?.map((url, idx)=>(
                     <img src={url} alt="test" key ={idx}></img>
                 ))
-                )) }
-                {business.reviews?.map((review, idx) => (
-                    <Review review ={review} key={idx}/>
-                   
-                    )) }
+                )) } */}
 
-              
+            {business.reviews?.map((review, idx) => (
+                <> 
+                    {review.photoUrl?.map((url, idx) => <img src={url} alt="picture" key={idx} />)}
+                    <Review review ={review} key={idx}/>  
+                </>
+            ))}
 
-
-                   
-
-            {/* <img src={business.photos[0]} alt="test"></img> */}
-            
         </>
     )
 }

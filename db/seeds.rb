@@ -171,6 +171,23 @@ ApplicationRecord.transaction do
       business_id: 3
     })
 
-  
+    puts "Adding pictures..."
+    review = Review.find_by_id(4)
+    review.photos.attach(io: URI.open("https://rex-help-dev.s3.us-west-1.amazonaws.com/m7m71gj8qjr5l4txiifovlixsgm3", filename: "safeway1"))
+    review.photos.attach(io: URI.open("https://rex-help-dev.s3.us-west-1.amazonaws.com/go0co3i4rh1l91bzucr1bl580uxa", filename: "safeway2"))
+    review.photos.attach(io: URI.open("https://rex-help-dev.s3.us-west-1.amazonaws.com/10h1npoblth2055rxs7rozu8lokd", filename: "safeway3"))
+    # review.photos.attach([{io: URI.open('https://cdn.winsightmedia.com/platform/files/public/2021-04/background/600x450/Safewaysanjoseproduceedit_1619805295.jpg?VersionId=b11HsKqjQuBeb76vnqxiTIie3nFCxGyb'), filename:'safeway1'},
+    # {io: URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/EXZ-OFuE1ctOqWM7ObyOPA/o.jpg'), filename:'safeway2'},
+    # {io: URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/KvO48aBrfs82i4dURHJnnw/l.jpg'), filename:'safeway3'}
+    # ])
+
+    review2 = Review.find_by_id(5)
+    review2.photos.attach(io: URI.open("https://rex-help-dev.s3.us-west-1.amazonaws.com/hlr5deew73dg64la97ky8kquu6k3", filename: "safeway4"))
+    review2.photos.attach(io: URI.open("https://rex-help-dev.s3.us-west-1.amazonaws.com/qo37a7jrl5d31d9c8xuzn8lsrbm9", filename: "safeway5"))
+    # review2.photos.attach([
+    #   {io: URI.open('https://s3-media0.fl.yelpcdn.com/bphoto/naBgW9iO8fH7cUsINzsGOg/l.jpg'), filename:'safeway4'},
+    #   {io: URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT88yVQ75_u9KuMF5v8oHYtFn4upheDGU_nKQ&usqp=CAU'), filename:'safeway5'}
+    # ])
+
     puts "Done!"
   end
