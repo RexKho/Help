@@ -1,6 +1,7 @@
 import React from "react";
 import './ReviewShow.css';
-import { formatDateTime } from '/Users/rex/Desktop/app academy/yelp/Help/frontend/src/util/dateUtil.js';
+import { formatDateTime } from '../util/dateUtil.js';
+
 // import { formatDateTime } from '../src/util/dateUtil';
 
 const Review = ({review}) => {
