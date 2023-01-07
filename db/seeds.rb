@@ -13,7 +13,7 @@ require "open-uri"
     User.destroy_all
     Review.destroy_all
     Business.destroy_all 
-    
+
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -174,7 +174,7 @@ require "open-uri"
       business_id: 3
     })
 
-    # puts "Adding pictures..."
+    puts "Adding pictures..."
     review = Review.find_by_id(1)
     review.photos.attach([
       # {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review1/dogtire1.jpg'), filename:'dogtire1'},
