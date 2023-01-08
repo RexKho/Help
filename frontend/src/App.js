@@ -16,15 +16,19 @@ function App() {
           {/* <GoogleMapp /> */}
           <BusinessIndexPage />
         </Route>
+
         <Route path="/businesses/:businessId">
           <BusinessShowPage />
         </Route>
+
         <Route path='/login'>
           <LoginFormPage />
         </Route>
+
         <Route path='/signup'>
           <SignupFormPage />
         </Route>
+        
       </Switch>
     </>
     
