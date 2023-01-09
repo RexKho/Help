@@ -19,7 +19,7 @@ const BusinessShowPage = () => {
 
     useEffect(()=>{
         dispatch(fetchBusiness(businessId));
-    }, [dispatch, businessId])
+    }, [dispatch])
 
    
 
@@ -32,7 +32,7 @@ const BusinessShowPage = () => {
             <h3 className="coordinates">Lat: {business.lat}</h3>
             <h3 className="coordinates">Long: {business.long}</h3>
             <div id="createReviewout">
-                <ReviewformModal/>
+                <ReviewformModal business = {business}/>
             </div>
        
             {/* {business.reviews?.map((review) => (

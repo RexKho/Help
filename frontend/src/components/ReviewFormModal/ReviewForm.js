@@ -8,11 +8,10 @@ const ReviewForm = () => {
 
     // let business = useSelector(getBusiness(businessId));
     
-    const {businessId} = useParams();
-    const [rating, setRating] = useState();
+    const { businessId } = useParams();
+    const [rating, setRating] = useState(3);
     const [body, setBody] = useState();
     const currentUser = useSelector(state => state.session.user);
-
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
@@ -20,11 +19,13 @@ const ReviewForm = () => {
         const data = {
             rating,
             body,
-            business_id: businessId,
+            business_id: Number(businessId),
             author_id: currentUser.id
         }
+        // console.log(data);
         dispatch(createReview(data));
     }
+
     return (
         <div id="wholeModal">
         {/* put business name for create title */}
@@ -34,22 +35,23 @@ const ReviewForm = () => {
                 <div id="reviewbox">
                     <label id ="ratingInput"> Rating: 
                         <label> 1
-                            <input type="radio" name="rating" value={rating}></input> 
+                            <input type="radio" name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}></input> 
                         </label>
                         <label> 2
-                            <input type="radio" name="rating" value={rating}></input> 
+                            <input type="radio" name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}></input> 
                         </label>
                         <label> 3
-                            <input type="radio" name="rating" value={rating}></input> 
+                            <input type="radio" name="rating" value={rating} checked onChange={(e)=> setRating(e.target.value)}></input> 
                         </label>
                         <label> 4
-                            <input type="radio" name="rating" value={rating}></input> 
+                            <input type="radio" name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}></input> 
                         </label>
                         <label> 5
-                            <input type="radio" name="rating" value={rating}></input> 
+                            <input type="radio" name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}></input> 
                         </label>     
+                        {/* <input type="range" min="1" max="5" value={rating} onChange={(e)=> setRating(e.target.value)}/> */}
                     </label>
-                        <textarea placeholder="Review" value={body} id="reviewInput" rows="5" cols="33"/>
+                        <textarea placeholder="Review" value={body} id="reviewInput" rows="5" cols="33" onChange ={(e)=> setBody(e.target.value)}/>
                         {/* <input type="textarea" rows="5" cols="40" id="reviewInput" placeholder="Review"></input> */}
                     
                 </div>

@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './ReviewShow.css';
 import { formatDateTime } from '../util/dateUtil.js';
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-// import { formatDateTime } from '../src/util/dateUtil';
 
 const Review = ({review}) => {
+    const businessId =useParams();
+    const dispatch = useDispatch();
     const { author, body, createdAt, rating } = review;
     const created = formatDateTime(createdAt);
+
+    // useEffect(()=>{
+    //     dispatch()
+    // }, [dispatch])
+
     // const user = useSelector( state => state.session.user)
     return(
         <div>
