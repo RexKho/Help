@@ -26,16 +26,16 @@ const ReviewForm = () => {
                             <input type="radio"></input> 
                         </label>     
                     </label>
-                    <label id="reviewInput"> Review:
-                        <input type="textarea" rows="5" cols="40"></input>
-                    </label>
+                    
+                        <input type="textarea" rows="5" cols="40" id="reviewInput" placeholder="Review"></input>
+                    
                 </div>
 
                 <div id ="attachPhoto">
                     <label>Attach a photo: </label>
                     <input type="file"></input>
                 </div>
-            <button id ="formButton">TYEETSS</button>
+            <button id ="formButton">Post Review</button>
             </form>
         </div>
     )
