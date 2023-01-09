@@ -1,33 +1,56 @@
 import "./ReviewFormModal.css";
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { createReview } from '../../store/reviews.js';
 
 const ReviewForm = () => {
 
+    // let business = useSelector(getBusiness(businessId));
+    
+    const {businessId} = useParams();
+    const [rating, setRating] = useState();
+    const [body, setBody] = useState();
+    const currentUser = useSelector(state => state.session.user);
+
+    const dispatch = useDispatch();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const data = {
+            rating,
+            body,
+            business_id: businessId,
+            author_id: currentUser.id
+        }
+        dispatch(createReview(data));
+    }
     return (
         <div id="wholeModal">
         {/* put business name for create title */}
             <h1 id="CreateTitle">Create a Review:</h1> 
-            <form id ="form">
+            <form id ="form" onSubmit={handleSubmit}>
 
                 <div id="reviewbox">
                     <label id ="ratingInput"> Rating: 
                         <label> 1
-                            <input type="radio"></input> 
+                            <input type="radio" name="rating" value={rating}></input> 
                         </label>
                         <label> 2
-                            <input type="radio"></input> 
+                            <input type="radio" name="rating" value={rating}></input> 
                         </label>
                         <label> 3
-                            <input type="radio"></input> 
+                            <input type="radio" name="rating" value={rating}></input> 
                         </label>
                         <label> 4
-                            <input type="radio"></input> 
+                            <input type="radio" name="rating" value={rating}></input> 
                         </label>
                         <label> 5
-                            <input type="radio"></input> 
+                            <input type="radio" name="rating" value={rating}></input> 
                         </label>     
                     </label>
-                    
-                        <input type="textarea" rows="5" cols="40" id="reviewInput" placeholder="Review"></input>
+                        <textarea placeholder="Review" value={body} id="reviewInput" rows="5" cols="33"/>
+                        {/* <input type="textarea" rows="5" cols="40" id="reviewInput" placeholder="Review"></input> */}
                     
                 </div>
 

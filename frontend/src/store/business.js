@@ -13,6 +13,13 @@ const addBusiness = (business) => ({
     payload: business
 });
 
+export const getBusiness = (businessId) => (state) => {
+    if (state && state.businesses){
+        return state.businesses[businessId];
+    }
+    return null;
+}
+
 
 export const fetchBusinesses = () => async (dispatch) => {
     const response = await csrfFetch('/api/businesses');

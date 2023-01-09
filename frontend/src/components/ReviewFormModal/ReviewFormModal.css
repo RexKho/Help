@@ -18,6 +18,10 @@
     background-color: rgba(224,7,7,1);
     color: rgba(255,255,255,1);
     box-sizing: border-box;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-flex;
    
 }
 
@@ -43,7 +47,7 @@
 
 #ratingInput{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 20px;
     font-weight: 700;
@@ -54,8 +58,8 @@
     display: flex;
     justify-content: center;
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 17px;
+    /* font-weight: 700; */
     width: 300px;
     height: 200px;
 }
@@ -84,7 +88,7 @@
     text-align: center;
     user-select: none;
     vertical-align: middle;
-    width: 100%;
+    width: 50%;
     background-color: rgba(224,7,7,1);
     color: rgba(255,255,255,1);
 }
