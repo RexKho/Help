@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"
 import { fetchBusiness } from "../../store/business";
@@ -12,14 +12,15 @@ const BusinessShowPage = () => {
     const { businessId } = useParams();
     const business = useSelector((store) => store.businesses[businessId]);
     const dispatch = useDispatch();
-    
+    const [showModal, setShowModal] = useState(false);
+
     // console.log(business.reviews)
     // console.log("testing business")
     // console.log(business.reviews[0].photos)
 
     useEffect(()=>{
         dispatch(fetchBusiness(businessId));
-    }, [dispatch])
+    }, [dispatch, showModal])
 
    
 
@@ -32,7 +33,7 @@ const BusinessShowPage = () => {
             <h3 className="coordinates">Lat: {business.lat}</h3>
             <h3 className="coordinates">Long: {business.long}</h3>
             <div id="createReviewout">
-                <ReviewformModal business = {business}/>
+                <ReviewformModal business = {business} showModal={showModal} setShowModal={setShowModal}/>
             </div>
        
             {/* {business.reviews?.map((review) => (

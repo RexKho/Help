@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/modal';
 import ReviewForm from "./ReviewForm";
 
-function ReviewformModal () {
+function ReviewformModal ({showModal, setShowModal}) {
 
-    const [showModal, setShowModal] = useState(false);
+    
     return (
         <>
             <button onClick={()=> setShowModal(true)} id="createButton">Create New Review</button>
