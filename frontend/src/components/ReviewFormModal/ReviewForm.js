@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { createReview } from '../../store/reviews.js';
 
-const ReviewForm = () => {
+const ReviewForm = ({setShowModal}) => {
 
     // let business = useSelector(getBusiness(businessId));
     
@@ -12,6 +12,7 @@ const ReviewForm = () => {
     const [rating, setRating] = useState(3);
     const [body, setBody] = useState();
     const currentUser = useSelector(state => state.session.user);
+    const [submitted, setSubmitted] = useState(false);
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
@@ -24,6 +25,7 @@ const ReviewForm = () => {
         }
         // console.log(data);
         dispatch(createReview(data));
+        setShowModal(false);
     }
 
     return (

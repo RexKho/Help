@@ -49,7 +49,6 @@ const businessReducer = (state = {}, action) => {
             return {...state, ...action.payload};
         case ADD_REVIEW:
             let newState = {...state};
-            debugger;
             newState[action.payload.businessId].reviews.push(action.payload);
             return newState;
         default:

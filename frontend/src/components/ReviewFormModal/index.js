@@ -10,8 +10,7 @@ function ReviewformModal () {
             <button onClick={()=> setShowModal(true)} id="createButton">Create New Review</button>
             {showModal && (
                 <Modal onClose={()=> setShowModal(false)} >
-                
-                    <ReviewForm />
+                    <ReviewForm setShowModal ={setShowModal}/>
                 </Modal>
                 )}
             
