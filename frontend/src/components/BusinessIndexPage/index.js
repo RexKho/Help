@@ -21,6 +21,7 @@ const BusinessIndexPage = () => {
 
     return (
         <>
+            
           <BusinessList businesses={businesses}/>
         </>
     );

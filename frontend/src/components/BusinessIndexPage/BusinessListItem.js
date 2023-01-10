@@ -16,6 +16,8 @@ const BusinessListItem = ({ business }) => {
     return (
         <div  className="business-container">
         {/* <div onClick={handleClick} className="business-container"> */}
+        {console.log(business.reviews)}
+            <img src={business.reviews[0].photoUrl} alt="picture" />
             <Link to={`/businesses/${business.id}`} id="businessName" >{business.name} </Link>
             
             <h2 id="businessDescription">{business.description}</h2>

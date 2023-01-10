@@ -18,7 +18,6 @@ export const removeReview = (reviewId) => ({
 
 
 export const createReview = (reviewData) => async (dispatch) =>{
-    console.log(reviewData);
     const response = await csrfFetch(`/api/businesses/${reviewData.businessId}/reviews`,{
         method: "POST",
         body: JSON.stringify(reviewData),
@@ -50,8 +49,7 @@ const reviewsReducer = (state = {}, action) => {
         //     console.log(newState);
         //     return newState;
         case REMOVE_REVIEW:
-            let index = newState.reviews.findIndex(review => review.reviewId === action.payload.reviewId);
-            newState.reviews.splice(index, 1);
+            delete newState[action.reviewId]
             return newState;
         default:
             return newState;

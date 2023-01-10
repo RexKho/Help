@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"
 import { fetchBusiness } from "../../store/business";
+import { deleteReview } from "../../store/reviews"
 import Review from "../ReviewShow";
 import './BusinessShowPage.css';
 import ReviewformModal from "../ReviewFormModal";
@@ -10,10 +11,11 @@ import ReviewformModal from "../ReviewFormModal";
 
 const BusinessShowPage = () => {
     const { businessId } = useParams();
-    const business = useSelector((store) => store.businesses[businessId]);
     const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
-
+    
+    
+    const business = useSelector((store) => store.businesses[businessId]);
     const currentUser = useSelector(state => state.session.user);
 
     // console.log(business.reviews)
@@ -29,8 +31,7 @@ const BusinessShowPage = () => {
         if (currentUser && review.author === currentUser.username) {
             return(
                 <>
-
-                    <button id="EditDelete">Delete Review</button>
+                    <button id="EditDelete" onClick={()=> dispatch(deleteReview(business.id, review.id))}>Delete Review</button>
                     <button id="EditDelete" onClick={()=>console.log("hi")}>Edit Review</button>
                 </>
             ) 
@@ -65,15 +66,13 @@ const BusinessShowPage = () => {
                 )) } */}
 
             {business.reviews?.map((review, idx) => (
-                <> 
-                    <div className="scroller">
+                    <div className="scroller" key={idx}>
                         <div className="images-container">
                             {review.photoUrl?.map((url, idx) => <img src={url} alt="picture" key={idx} id="reviewPicture"/>)}
                         </div>
                     {editDeleteButton(review)}
                     <Review review ={review} key={idx}/> 
                     </div>
-                </>
             ))}
 
         </>
