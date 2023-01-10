@@ -14,6 +14,8 @@ const BusinessShowPage = () => {
     const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
 
+    const currentUser = useSelector(state => state.session.user);
+
     // console.log(business.reviews)
     // console.log("testing business")
     // console.log(business.reviews[0].photos)
@@ -21,6 +23,17 @@ const BusinessShowPage = () => {
     useEffect(()=>{
         dispatch(fetchBusiness(businessId));
     }, [dispatch, showModal])
+
+    const editDeleteButton = (review) => {
+        if (review.author === currentUser.username) {
+            return(
+                <>
+                    <button>Edit Review</button>
+                    <button>Delete Review</button>
+                </>
+            ) 
+        }
+    }
 
    
 
@@ -48,7 +61,10 @@ const BusinessShowPage = () => {
                         <div className="images-container">
                             {review.photoUrl?.map((url, idx) => <img src={url} alt="picture" key={idx} id="reviewPicture"/>)}
                         </div>
-                    <Review review ={review} key={idx}/>  
+                    {editDeleteButton(review)}
+                    <Review review ={review} key={idx}/> 
+                    {/* {console.log(review.author)}
+                    {console.log(currentUser.username)} */}
                     </div>
                 </>
             ))}

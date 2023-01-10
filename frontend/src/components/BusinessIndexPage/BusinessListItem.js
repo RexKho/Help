@@ -4,6 +4,7 @@ import { useHistory, Redirect, Link } from 'react-router-dom';
 const BusinessListItem = ({ business }) => {
     
     const history = useHistory();
+
     
 
     const handleClick = (e) => {
@@ -17,6 +18,7 @@ const BusinessListItem = ({ business }) => {
         {/* <div onClick={handleClick} className="business-container"> */}
             <Link to={`/businesses/${business.id}`} id="businessName">{business.name}</Link> 
             <h2 id="businessDescription">{business.description}</h2>
+         
         </div>
     );
     };
