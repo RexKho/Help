@@ -176,6 +176,48 @@ require "open-uri"
       business_id: 3
     })
 
+    Review.create!({
+      rating: 4,
+      body: "First! HAQHAHHAAH",
+      author_id: 4,
+      business_id: 4
+    })
+
+    Review.create!({
+      rating: 4,
+      body: "First! HAQHAHHAAH",
+      author_id: 4,
+      business_id: 5
+    })
+
+    Review.create!({
+      rating: 4,
+      body: "First! HAQHAHHAAH",
+      author_id: 4,
+      business_id: 6
+    })
+
+    Review.create!({
+      rating: 4,
+      body: "First! HAQHAHHAAH",
+      author_id: 4,
+      business_id: 7
+    })
+
+    Review.create!({
+      rating: 4,
+      body: "First! HAQHAHHAAH",
+      author_id: 4,
+      business_id: 8
+    })
+
+    Review.create!({
+      rating: 4,
+      body: "First! HAQHAHHAAH",
+      author_id: 4,
+      business_id: 9
+    })
+
     puts "Adding pictures..."
     review = Review.find_by_id(1)
     review.photos.attach([
@@ -206,5 +248,62 @@ require "open-uri"
     ])
     # review.photos.attach(io: URI.open("https://rex-help-dev.s3.us-west-1.amazonaws.com/m7m71gj8qjr5l4txiifovlixsgm3"), filename: "safeway1.jpg")
   
+    review = Review.find_by_id(6)
+    review.photos.attach([
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review6/dimsum1.jpg'), filename:'dimsum1'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review6/dimsum2.jpg'), filename:'dimsum2'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review6/dimsum3.jpg'), filename:'dimsum3'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review6/dimsum4.jpg'), filename:'dimsum4'}
+    ])
+
+    review = Review.find_by_id(7)
+    review.photos.attach([
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review7/costco1.jpg'), filename:'costco1'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review7/costco2.jpg'), filename:'costco2'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review7/costco3.jpg'), filename:'costco3'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review7/costco4.jpg'), filename:'costco4'}
+    ])
+
+    review = Review.find_by_id(8)
+    review.photos.attach([
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review8/ramen1.jpg'), filename:'ramen1'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review8/ramen2.jpg'), filename:'ramen2'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review8/ramen3.jpg'), filename:'ramen3'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review8/ramen4.jpg'), filename:'ramen4'}
+    ])
+
+    review = Review.find_by_id(9)
+    review.photos.attach([
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review9/apple1.jpg'), filename:'apple1'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review9/apple2.jpg'), filename:'apple2'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review9/apple3.jpg'), filename:'apple3'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review9/apple4.jpg'), filename:'apple4'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review9/apple5.jpg'), filename:'apple5'}
+    ])
+
+    review = Review.find_by_id(10)
+    review.photos.attach([
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review10/us1.jpg'), filename:'us1'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review10/us2.jpg'), filename:'us2'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review10/us3.jpg'), filename:'us3'}
+    ])
+
+    review = Review.find_by_id(11)
+    review.photos.attach([
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review11/moncler1.jpg'), filename:'moncler1'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review11/moncler2.jpg'), filename:'moncler2'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review11/moncler3.jpg'), filename:'moncler3'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review11/moncler4.jpg'), filename:'moncler4'}
+    ])
+
+    review = Review.find_by_id(12)
+    review.photos.attach([
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review12/macy1.jpg'), filename:'macy1'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review12/macy2.jpg'), filename:'macy2'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review12/macy3.jpg'), filename:'macy3'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review12/macy4.jpg'), filename:'macy4'}
+    ])
+
+
     puts "Done!"
   # end

@@ -16,8 +16,11 @@ const BusinessListItem = ({ business }) => {
     return (
         <div  className="business-container">
         {/* <div onClick={handleClick} className="business-container"> */}
-            <Link to={`/businesses/${business.id}`} id="businessName">{business.name}</Link> 
+            <Link to={`/businesses/${business.id}`} id="businessName" >{business.name} </Link>
+            
             <h2 id="businessDescription">{business.description}</h2>
+
+
          
         </div>
     );

@@ -25,19 +25,31 @@ const BusinessShowPage = () => {
     }, [dispatch, showModal])
 
     const editDeleteButton = (review) => {
-        if (review.author === currentUser.username) {
+
+        if (currentUser && review.author === currentUser.username) {
             return(
                 <>
-                    <button>Edit Review</button>
-                    <button>Delete Review</button>
+
+                    <button id="EditDelete">Delete Review</button>
+                    <button id="EditDelete" onClick={()=>console.log("hi")}>Edit Review</button>
                 </>
             ) 
         }
     }
 
-   
+    const createReviewButton = () => {
+        if (currentUser){
+            return (
+                <div id="createReviewout">
+                    <ReviewformModal business = {business} showModal={showModal} setShowModal={setShowModal}/>
+                </div>
+            )
+        }
+    }
 
-
+    if(!business){
+        return null
+    }
 
     return (
         <>
@@ -45,10 +57,7 @@ const BusinessShowPage = () => {
             <h2 id="busDes">{business.description}</h2>
             <h3 className="coordinates">Lat: {business.lat}</h3>
             <h3 className="coordinates">Long: {business.long}</h3>
-            <div id="createReviewout">
-                <ReviewformModal business = {business} showModal={showModal} setShowModal={setShowModal}/>
-            </div>
-       
+            {createReviewButton()}
             {/* {business.reviews?.map((review) => (
                 review.photoUrl?.map((url, idx)=>(
                     <img src={url} alt="test" key ={idx}></img>
@@ -63,8 +72,6 @@ const BusinessShowPage = () => {
                         </div>
                     {editDeleteButton(review)}
                     <Review review ={review} key={idx}/> 
-                    {/* {console.log(review.author)}
-                    {console.log(currentUser.username)} */}
                     </div>
                 </>
             ))}
