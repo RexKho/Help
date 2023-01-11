@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"
 import { fetchBusiness } from "../../store/business";
@@ -6,6 +6,7 @@ import { deleteReview } from "../../store/reviews"
 import Review from "../ReviewShow";
 import './BusinessShowPage.css';
 import ReviewformModal from "../ReviewFormModal";
+import editFrom from "../EditReview";
 
 
 
@@ -13,10 +14,18 @@ const BusinessShowPage = () => {
     const { businessId } = useParams();
     const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
+    const [deleteClicked, setDeleteClicked] = useState(false);
     
     
     const business = useSelector((store) => store.businesses[businessId]);
     const currentUser = useSelector(state => state.session.user);
+    const reviewss= useSelector((state)=> {
+        if (state.reviews){
+            return Object.values(state.reviews);
+        }
+
+    })
+    
 
     // console.log(business.reviews)
     // console.log("testing business")
@@ -24,15 +33,22 @@ const BusinessShowPage = () => {
 
     useEffect(()=>{
         dispatch(fetchBusiness(businessId));
-    }, [dispatch, showModal])
+       
+    }, [dispatch, businessId])
+    
+    const handleClick = (review) =>{
+        console.log(review);
+        setDeleteClicked(true);
+        dispatch(deleteReview(business.id, review.id));
+    }
 
     const editDeleteButton = (review) => {
 
         if (currentUser && review.author === currentUser.username) {
             return(
                 <>
-                    <button id="EditDelete" onClick={()=> dispatch(deleteReview(business.id, review.id))}>Delete Review</button>
-                    <button id="EditDelete" onClick={()=>console.log("hi")}>Edit Review</button>
+                    <button id="EditDelete" onClick={()=> handleClick(review)}>Delete Review</button>
+                    <button id="EditDelete" onClick={()=> editFrom(review)}>Edit Review</button>
                 </>
             ) 
         }
@@ -42,7 +58,7 @@ const BusinessShowPage = () => {
         if (currentUser){
             return (
                 <div id="createReviewout">
-                    <ReviewformModal business = {business} showModal={showModal} setShowModal={setShowModal}/>
+                    <ReviewformModal business = {business} showModal={showModal} setShowModal={setShowModal} />
                 </div>
             )
         }
@@ -64,8 +80,8 @@ const BusinessShowPage = () => {
                     <img src={url} alt="test" key ={idx}></img>
                 ))
                 )) } */}
-
-            {business.reviews?.map((review, idx) => (
+            {console.log(reviewss)}
+            {reviewss && reviewss?.map((review, idx) => (
                     <div className="scroller" key={idx}>
                         <div className="images-container">
                             {review.photoUrl?.map((url, idx) => <img src={url} alt="picture" key={idx} id="reviewPicture"/>)}

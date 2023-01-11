@@ -12,7 +12,6 @@ const ReviewForm = ({setShowModal}) => {
     const [rating, setRating] = useState(3);
     const [body, setBody] = useState();
     const currentUser = useSelector(state => state.session.user);
-    const [submitted, setSubmitted] = useState(false);
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
@@ -20,8 +19,8 @@ const ReviewForm = ({setShowModal}) => {
         const data = {
             rating,
             body,
-            business_id: Number(businessId),
-            author_id: currentUser.id
+            businessId: Number(businessId),
+            authorId: currentUser.id
         }
         // console.log(data);
         dispatch(createReview(data));

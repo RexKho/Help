@@ -6,14 +6,12 @@ import { useDispatch } from "react-redux";
 
 
 const Review = ({review}) => {
-    const businessId =useParams();
-    const dispatch = useDispatch();
+    // const businessId =useParams();
+    // const dispatch = useDispatch();
     const { author, body, createdAt, rating } = review;
     const created = formatDateTime(createdAt);
 
-    // useEffect(()=>{
-    //     dispatch()
-    // }, [dispatch])
+  
 
     // const user = useSelector( state => state.session.user)
     return(

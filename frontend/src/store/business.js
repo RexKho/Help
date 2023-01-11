@@ -1,8 +1,8 @@
 import csrfFetch from "./csrf";
 
 const SET_BUSINESSES = "businesses/setBusinesses";
-const ADD_BUSINESS = "businesses/addBusiness";
-const ADD_REVIEW = "reviews/addReview";
+export const ADD_BUSINESS = "businesses/addBusiness";
+// const ADD_REVIEW = "reviews/addReview";
 
 const setBusinesses = (businesses) => ({
     type: SET_BUSINESSES,
@@ -20,6 +20,10 @@ export const getBusiness = (businessId) => (state) => {
     }
     return null;
 }
+
+
+
+
 
 
 export const fetchBusinesses = () => async (dispatch) => {
@@ -46,11 +50,12 @@ const businessReducer = (state = {}, action) => {
         case SET_BUSINESSES:
             return {...state, ...action.payload};
         case ADD_BUSINESS:
-            return {...state, ...action.payload};
-        case ADD_REVIEW:
-            let newState = {...state};
-            newState[action.payload.businessId].reviews.push(action.payload);
-            return newState;
+
+            return {...state, ...action.payload.business};
+        // case ADD_REVIEW:
+        //     let newState = {...state};
+        //     newState[action.payload.businessId].reviews.push(action.payload);
+        //     return newState;
         default:
             return state;
     }

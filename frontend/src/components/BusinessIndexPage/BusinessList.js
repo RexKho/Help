@@ -1,14 +1,14 @@
 import React from 'react';
 import BusinessListItem from './BusinessListItem';
 
-const BusinessList = ({businesses}) => {
+const BusinessList = ({businesses, reviews}) => {
     return (
         <div>
             <h1 id="title">Local Businesses</h1>
 
             <div id ="module">              
             {businesses?.map((business, idx)=>(
-                <BusinessListItem business={business} key={idx} />
+                <BusinessListItem business={business} reviews={reviews} key={idx} />
                 )
             )}
             </div>

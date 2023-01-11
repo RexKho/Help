@@ -8,7 +8,7 @@ import sessionReducer from './session';
 
 const rootReducer = combineReducers({
     session: sessionReducer,
-    review: reviewsReducer,
+    reviews: reviewsReducer,
     businesses: businessReducer
 });
 

@@ -1,5 +1,5 @@
 class Api::ReviewsController < ApplicationController 
-
+    wrap_parameters include: Review.attribute_names + ['businessId','authorId']
     def create 
         @review = Review.new(review_params)
         @review.author_id = current_user.id 
@@ -11,6 +11,15 @@ class Api::ReviewsController < ApplicationController
             render :show
         else 
             render json: {errors: @review.errors.full_messages }, status: :unauthorized
+        end
+    end
+
+    def update 
+        @review = Review.find(params[:id])
+        if @review.update(review_params)
+            render :show
+        else 
+            render json: {errors: @review.errors.full_messages }, status: :unprocessable_entity
         end
     end
 

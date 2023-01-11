@@ -12,6 +12,7 @@ const BusinessIndexPage = () => {
 
 
     const businesses = useSelector((store)=> Object.values(store.businesses));
+    const reviews = useSelector((state) => Object.values(state.reviews))
     const dispatch = useDispatch();
 
     // const history = useHistory();
@@ -21,8 +22,8 @@ const BusinessIndexPage = () => {
 
     return (
         <>
-            
-          <BusinessList businesses={businesses}/>
+            {console.log(reviews)}
+          <BusinessList businesses={businesses} reviews={reviews}/>
         </>
     );
 };

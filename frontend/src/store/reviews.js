@@ -1,4 +1,5 @@
 import csrfFetch from "./csrf";
+import { ADD_BUSINESS } from "./business";
 
 const REMOVE_REVIEW ="reviews/removeReview";
 const ADD_REVIEW = "reviews/addReview";
@@ -12,7 +13,6 @@ export const removeReview = (reviewId) => ({
     type: REMOVE_REVIEW,
     reviewId
 });
-
 
 
 
@@ -31,6 +31,8 @@ export const createReview = (reviewData) => async (dispatch) =>{
     }
 };
 
+
+
 export const deleteReview = (businessId, reviewId) => async (dispatch) => {
     const response = await csrfFetch(`/api/businesses/${businessId}/reviews/${reviewId}`,{
         method: "DELETE"
@@ -40,14 +42,28 @@ export const deleteReview = (businessId, reviewId) => async (dispatch) => {
     }
 };
 
+export const editReview = (businessId, review) => async (dispatch) =>{
+    const response = await csrfFetch(`/api/businesses/${businessId}/review/${review.id}` , {
+        method: "PATCH",
+        body: JSON.stringify(review),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+    if (response.ok){
+        let data = await response.json();
+        dispatch(addReview(data));
+    }
+}
+
 const reviewsReducer = (state = {}, action) => {
     let newState = {...state};
     switch(action.type) {
-        // case ADD_REVIEW:
-        //     debugger
-        //     newState.businesses[action.payload.businessId].reviews.push(action.payload);
-        //     console.log(newState);
-        //     return newState;
+        case ADD_BUSINESS:
+            return {...newState, ...action.payload.reviews};
+        case ADD_REVIEW:
+            newState[action.payload.id] = (action.payload);
+            return newState;
         case REMOVE_REVIEW:
             delete newState[action.reviewId]
             return newState;
