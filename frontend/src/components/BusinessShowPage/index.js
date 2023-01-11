@@ -14,8 +14,6 @@ const BusinessShowPage = () => {
     const { businessId } = useParams();
     const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
-    const [deleteClicked, setDeleteClicked] = useState(false);
-    
     
     const business = useSelector((store) => store.businesses[businessId]);
     const currentUser = useSelector(state => state.session.user);
@@ -23,10 +21,8 @@ const BusinessShowPage = () => {
         if (state.reviews){
             return Object.values(state.reviews);
         }
-
     })
     
-
     // console.log(business.reviews)
     // console.log("testing business")
     // console.log(business.reviews[0].photos)
@@ -37,8 +33,6 @@ const BusinessShowPage = () => {
     }, [dispatch, businessId])
     
     const handleClick = (review) =>{
-        console.log(review);
-        setDeleteClicked(true);
         dispatch(deleteReview(business.id, review.id));
     }
 

@@ -60,7 +60,7 @@ const reviewsReducer = (state = {}, action) => {
     let newState = {...state};
     switch(action.type) {
         case ADD_BUSINESS:
-            return {...newState, ...action.payload.reviews};
+            return {...action.payload.reviews};
         case ADD_REVIEW:
             newState[action.payload.id] = (action.payload);
             return newState;

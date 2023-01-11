@@ -222,8 +222,8 @@ require "open-uri"
     review = Review.find_by_id(1)
     review.photos.attach([
       # {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review1/dogtire1.jpg'), filename:'dogtire1'},
-      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review1/dogtire2.jpg'), filename:'dogtire2'},
-      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review1/dogtire3.jpg'), filename:'dogtire3'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review1/dogtire3.jpg'), filename:'dogtire2'},
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review1/dogtire2.jpg'), filename:'dogtire3'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review1/dogtire4.jpg'), filename:'dogtire4'}
     ])
 

@@ -53,3 +53,12 @@
     font-size: 14px;
     font-weight: 400;
 }
+
+#prevPicture{
+    display: flex;
+    justify-content: start;
+    /* gap: 40px; */
+    /* margin: auto; */
+    max-height: 150px;
+    max-width: 100px;
+}

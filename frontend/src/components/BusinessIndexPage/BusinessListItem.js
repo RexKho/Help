@@ -20,9 +20,11 @@ const BusinessListItem = ({ business }) => {
     return (
         <div  className="business-container">
         {/* <div onClick={handleClick} className="business-container"> */}
-      
-            <img src={business.photoUrls[0]} alt="picture" />
-            <Link to={`/businesses/${business.id}`} id="businessName" >{business.name} </Link>
+            <div id="prevPicture">
+                <img src={business.photoUrls[0]} alt="picture" />
+
+            </div>
+            <Link to={`/businesses/${business.id}`} id="businessName" key={business.id}>{business.name}</Link>
             
             <h2 id="businessDescription">{business.description}</h2>
 
