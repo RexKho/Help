@@ -1,14 +1,18 @@
 .business-container {
     /* flex-wrap: wrap;
     justify-content: space-evenly; */
-    width: 33%;
-    
+    width: 30%;
+    height: 30%;
+    margin-top: 20px;
+
     border: 1px solid #ebebeb;
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 #title{
+    margin-top: 20px;
     display: flex;
+    margin-bottom: -30px;
     justify-content: center;
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 28px;
@@ -41,7 +45,7 @@
     border-radius: 3px;
     text-decoration: none;
     color: rgba(2,122,151,1);
-    font-size: 14px;
+    font-size: 20px;
     line-height: 20px;
     display: flex;
     justify-content: center;
@@ -49,6 +53,8 @@
 
 #businessDescription {
     padding: 10px;
+    display: flex;
+    justify-content: center;
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -56,9 +62,14 @@
 
 #prevPicture{
     display: flex;
-    justify-content: start;
+    justify-content: center;
+    /* object-fit: cover; */
     /* gap: 40px; */
-    /* margin: auto; */
+    margin: auto;
     max-height: 150px;
     max-width: 100px;
+}
+
+#imageId{
+    object-fit: contain;
 }
