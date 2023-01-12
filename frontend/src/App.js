@@ -7,6 +7,7 @@ import BusinessIndexPage from "./components/BusinessIndexPage";
 import BusinessShowPage from "./components/BusinessShowPage";
 import GoogleMapp from "./components/GoogleMap";
 import EditFrom from "./components/EditReview";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
         </Route>
         
       </Switch>
+
+      <Footer/>
     </>
     
   );

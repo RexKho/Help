@@ -91,20 +91,20 @@ const BusinessShowPage = () => {
 
 
             {createReviewButton(currUserReviewId)}
-            {/* {business.reviews?.map((review) => (
-                review.photoUrl?.map((url, idx)=>(
-                    <img src={url} alt="test" key ={idx}></img>
-                ))
-                )) } */}
-            {reviewss && reviewss?.map((review, idx) => (
+            <div id="reviewList">
+
+                {reviewss && reviewss?.map((review, idx) => (
                     <div className="scroller" key={idx}>
-                        <div className="images-container">
-                            {review.photoUrl?.map((url, idx) => <img src={url} alt="picture" key={idx} id="reviewPicture"/>)}
+
+                            <div className="images-container">
+                                {review.photoUrl?.map((url, idx) => <img src={url} alt="picture" key={idx} id="reviewPicture"/>)}
+                            </div>
+
+                            {editDeleteButton(review)}
+                            <Review review ={review} key={idx}/> 
                         </div>
-                    {editDeleteButton(review)}
-                    <Review review ={review} key={idx}/> 
-                    </div>
-            ))}
+                ))}
+            </div>
    {console.log(currUserReviewId)} 
    {/* note for tomorrow, currUserReview isnt being set until the reviews render. */}
         </>

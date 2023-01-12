@@ -1,0 +1,34 @@
+.footer{
+    /* display: block; */
+    /* justify-content: center; */
+    background-color: #d32323;
+    padding: 10px 40px;
+    pointer-events: auto;
+    
+}
+
+#footerName{
+   
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    align-items: center;
+    font-family: Snell Roundhand, cursive;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#github img{
+    max-width: 70px;
+    max-height: 70px;
+
+}
+
+#linkedin img{
+    height: 50px;
+    width: 50px;
+}

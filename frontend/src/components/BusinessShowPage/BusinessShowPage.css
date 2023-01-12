@@ -101,3 +101,7 @@
     /* font: inherit; */
     float: right; 
 } 
+
+#reviewList{
+    margin-bottom: 40px;
+}
