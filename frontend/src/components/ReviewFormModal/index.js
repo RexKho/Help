@@ -7,7 +7,6 @@ function ReviewformModal ({showModal, setShowModal, currUserReviewId}) {
     
     return (
         <>
-        {console.log(currUserReviewId)}
             <button onClick={()=> setShowModal(true)} id="createButton"> <i className="fa-regular fa-star"></i> &nbsp; Write a Review</button> 
             {/* conditional to edit a review if review already there */}
             {showModal && (

@@ -3,7 +3,7 @@ import BusinessListItem from './BusinessListItem';
 
 const BusinessList = ({businesses}) => {
     return (
-        <div>
+        <div id="mainContainer">
             <h1 id="title">Local Businesses</h1>
 
             <div id ="module">              

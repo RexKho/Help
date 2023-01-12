@@ -46,7 +46,7 @@ export const deleteReview = (businessId, reviewId) => async (dispatch) => {
 };
 
 export const editReview = (businessId, review) => async (dispatch) =>{
-    const response = await csrfFetch(`/api/businesses/${businessId}/review/${review.id}` , {
+    const response = await csrfFetch(`/api/businesses/${businessId}/reviews/${review.id}` , {
         method: "PATCH",
         body: JSON.stringify(review),
         headers: {

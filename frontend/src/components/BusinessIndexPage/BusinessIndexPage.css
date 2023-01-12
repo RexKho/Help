@@ -73,3 +73,7 @@
 #imageId{
     object-fit: contain;
 }
+
+#mainContainer{
+    margin-bottom: 150px;
+}

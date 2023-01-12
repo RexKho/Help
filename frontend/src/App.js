@@ -23,7 +23,7 @@ function App() {
           <BusinessShowPage />
         </Route>
 
-        <Route path="/editreview">
+        <Route exact path="/:businessId/editreview/:reviewId">
           <EditFrom />
         </Route>
 

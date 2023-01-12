@@ -1,4 +1,4 @@
-import { useEffect, useState, useSyncExternalStore } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"
 import { fetchBusiness } from "../../store/business";
@@ -6,9 +6,9 @@ import { deleteReview } from "../../store/reviews"
 import Review from "../ReviewShow";
 import './BusinessShowPage.css';
 import ReviewformModal from "../ReviewFormModal";
+import { NavLink } from "react-router-dom";
 import EditFrom from "../EditReview";
-
-
+import { useContext } from "react";
 
 const BusinessShowPage = () => {
     const { businessId } = useParams();
@@ -17,40 +17,39 @@ const BusinessShowPage = () => {
     
     const business = useSelector((store) => store.businesses[businessId]);
     const currentUser = useSelector(state => state.session.user);
+    
     const reviewss= useSelector((state)=> {
         if (state.reviews){
             return Object.values(state.reviews);
         }
     })
-
-
-
+    
+    
+    
     let currUserReviewId;
-
-
+    
+    
     useEffect(()=>{
         dispatch(fetchBusiness(businessId));
-    //    console.log(reviewss.author);
-    //    console.log(currentUser);
+        //    console.log(reviewss.author);
+        //    console.log(currentUser);
     }, [dispatch, businessId])
     
     const handleClick = (review) =>{
         dispatch(deleteReview(business.id, review.id));
     }
-
+    
     const editDeleteButton = (review) => {
         if (currentUser && review.author === currentUser.username) {
-            currUserReviewId = review.id;
+            // currUserReviewId = review.id;
+            
             return(
                 <>
-                {console.log(currUserReviewId)} 
                     <button id="EditDelete" onClick={()=> handleClick(review)}>Delete Review</button>
-                    <button id="EditDelete" onClick={()=> {
-                            setShowModal(true);
-                        return (<ReviewformModal review={review} showModal={showModal} setShowModal={setShowModal}  currUserReviewId={currUserReviewId}/>)
-                    }
-                    }>Edit Review</button>
+                    
+                    <NavLink id="EditDelete" to={{pathname: `/${businessId}/editreview/${review.id}`}} state={{review: review}}>Edit Review</NavLink>
                     {/* <button id="EditDelete" onClick={()=> setShowModal(true)}>Edit Review</button> */}
+                
                 </>
             ) 
         }
@@ -76,13 +75,13 @@ const BusinessShowPage = () => {
 
     return (
         <>
-            <div class="topPicture">
+            <div className="topPicture">
                     <img src={reviewss[0].photoUrl[0]} alt="top picture" width="100%" id="pictureontop"></img>
                 <h1 id="busName" className="bottom-left"> {business.name}</h1>
             </div>
 
-                <h3 class="coordinates" >Long: {business.long}</h3>
-                <h3 class="coordinates" >Lat: {business.lat}</h3>
+                <h3 className="coordinates" >Long: {business.long}</h3>
+                <h3 className="coordinates" >Lat: {business.lat}</h3>
 
             <div id="desContainer">
                 <h1 id="aboutBusiness">About the Business</h1>
@@ -105,8 +104,6 @@ const BusinessShowPage = () => {
                         </div>
                 ))}
             </div>
-   {console.log(currUserReviewId)} 
-   {/* note for tomorrow, currUserReview isnt being set until the reviews render. */}
         </>
     )
 }
