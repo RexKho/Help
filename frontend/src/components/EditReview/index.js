@@ -1,16 +1,34 @@
 import React from "react";
 import { useState, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { editReview } from "../../store/reviews";
+import { useParams } from "react-router-dom";
+import { editReview, getReview } from "../../store/reviews";
 
 
-const EditFrom = () => {
-   
-    // console.log(review);
-    // const {author, body, createdAt, id, rating} = review;
-    // const businessId = review.businessId;
-    // const [rating, setRating] = useState(review.rating);
-    // const [body, setBody] = useState(review.body);
+const EditFrom = (props) => {
+//    console.log(review);
+const dispatch = useDispatch();
+const {reviewId} = useParams();
+const review = useSelector(getReview(reviewId));
+const {author, body, createdAt, id, rating} = review;
+
+console.log(author);
+
+const [rating2, setRating] = useState(review.rating);
+const [body2, setBody] = useState(review.body);
+
+
+
+    //What I have tried:
+    // 1. passing in review in editDeleteButton to use as a prop 
+    //    and deconstruct. Review would come up undefined
+    // 2. use withRouter, does not get passed in. I can set the
+    //    default to {} but will always be {}
+    // 3. Tried to use useContext but already have a default function exported
+    //
+
+
+
     // const currentUser = useSelector(state => state.session.user);
     // const dispatch = useDispatch();
 
