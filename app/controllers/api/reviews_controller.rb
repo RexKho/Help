@@ -18,6 +18,7 @@ class Api::ReviewsController < ApplicationController
         @review = Review.find(params[:id])
         if @review.update(review_params)
             render :show
+            # render `/api/businesses/${businessId}`
         else 
             render json: {errors: @review.errors.full_messages }, status: :unprocessable_entity
         end

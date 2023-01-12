@@ -23,6 +23,7 @@ const history = useHistory();
 
 const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(rating);
     const data = {
         rating,
         body,
@@ -46,19 +47,19 @@ return (
                 <div id="reviewbox">
                     <label id ="ratingInput"> Rating: 
                         <label> 1
-                            <input type="radio" name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}></input> 
+                            <input type="radio" name="rating" value={1} onChange={(e)=> setRating(e.target.value)}></input> 
                         </label>
                         <label> 2
-                            <input type="radio" name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}></input> 
+                            <input type="radio" name="rating" value={2} onChange={(e)=> setRating(e.target.value)}></input> 
                         </label>
                         <label> 3
-                            <input type="radio" name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}></input> 
+                            <input type="radio" name="rating" value={3} onChange={(e)=> setRating(e.target.value)}></input> 
                         </label>
                         <label> 4
-                            <input type="radio" name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}></input> 
+                            <input type="radio" name="rating" value={4} onChange={(e)=> setRating(e.target.value)}></input> 
                         </label>
                         <label> 5
-                            <input type="radio" name="rating" value={rating} onChange={(e)=> setRating(e.target.value)}></input> 
+                            <input type="radio" name="rating" value={5} onChange={(e)=> setRating(e.target.value)}></input> 
                         </label>     
                     </label>
                         <textarea placeholder="Review" value={body} id="reviewInput" rows="5" cols="33" onChange ={(e)=> setBody(e.target.value)}/>
