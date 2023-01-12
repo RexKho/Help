@@ -12,6 +12,7 @@ function ReviewformModal ({showModal, setShowModal, currUserReviewId}) {
             {/* conditional to edit a review if review already there */}
             {showModal && (
                 <Modal onClose={()=> setShowModal(false)} >
+                    {console.log(currUserReviewId)}
                     <ReviewForm setShowModal ={setShowModal} currUserReviewId={currUserReviewId}/>
                 </Modal>
                 )}

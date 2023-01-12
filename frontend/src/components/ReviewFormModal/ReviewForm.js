@@ -14,7 +14,6 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
     const dispatch = useDispatch();
    
 
-    
     const revieww = useSelector(getReview(currUserReviewId));
     
 
@@ -48,7 +47,7 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
 
     return (
         <div id="wholeModal">
-          {console.log(currUserReviewId)}
+          {/* {console.log(currUserReviewId)} */}
         {/* put business name for create title */}
             <h1 id="CreateTitle">{currUserReviewId? "Edit a Review" : "Create a Review:" }</h1> 
             <form id ="form" onSubmit={handleSubmit}>

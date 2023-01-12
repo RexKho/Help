@@ -23,6 +23,8 @@ const BusinessShowPage = () => {
         }
     })
 
+
+
     let currUserReviewId;
 
 
@@ -41,10 +43,11 @@ const BusinessShowPage = () => {
             currUserReviewId = review.id;
             return(
                 <>
+                {console.log(currUserReviewId)} 
                     <button id="EditDelete" onClick={()=> handleClick(review)}>Delete Review</button>
                     <button id="EditDelete" onClick={()=> {
                             setShowModal(true);
-                        return (<ReviewformModal review={review} showModal={showModal} setShowModal={setShowModal} currUserReviewId={currUserReviewId}/>)
+                        return (<ReviewformModal review={review} showModal={showModal} setShowModal={setShowModal}  currUserReviewId={currUserReviewId}/>)
                     }
                     }>Edit Review</button>
                     {/* <button id="EditDelete" onClick={()=> setShowModal(true)}>Edit Review</button> */}
@@ -57,7 +60,7 @@ const BusinessShowPage = () => {
         if (currentUser){
             return (
                 <div id="createReviewout">
-                    <ReviewformModal currUserReviewId = {currUserReviewId} showModal={showModal} setShowModal={setShowModal} />
+                    <ReviewformModal currUserReviewId = {currUserReviewId} showModal={showModal}  setShowModal={setShowModal} />
                 </div>
             )
         }
