@@ -30,21 +30,23 @@ function ProfileButton({user}){
 
     return (
         <>
-        <button id = "logoutButton" onClick={openMenu}>
-            <i className="fa-sharp fa-solid fa-user"></i>
-        </button>
-        {showMenu && (
-            <ul className ="profile-dropdown">
-                <li>{user.username}</li>
-               
-                <li>{user.email}</li>
-                <li>
-                    <button onClick={logout} id="logoutbutton">
-                        <i className="fa-sharp fa-solid fa-right-from-bracket"></i>
-                    </button>
-                </li>
-            </ul>
-        )}
+        <div id="wholeDropDown">
+            <button id = "dropDownButton" onClick={openMenu}>
+                <i className="fa-sharp fa-solid fa-user"></i>
+            </button>
+            {showMenu && (
+                <ul className ="profile-dropdown">
+                    {/* <li>{user.username}</li>
+                
+                    <li>{user.email}</li> */}
+                    <li>
+                        <button onClick={logout} id="logoutbutton">
+                            <i className="fa-sharp fa-solid fa-right-from-bracket"></i>
+                        </button>
+                    </li>
+                </ul>
+            )}
+        </div>
         </>
     )
 }
