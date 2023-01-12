@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory, useParams } from "react-router-dom";
 import { editReview, getReview } from "../../store/reviews";
+import "./EditReview.css"
 
 
 const EditFrom = (props) => {
@@ -39,7 +40,7 @@ const handleSubmit = (e) => {
 return (
         <>
         
-            <h1>Edit a Review</h1>
+            <h1 id="editTitle">Edit a Review</h1>
             <form id ="form" onSubmit={handleSubmit}>
         
                 <div id="reviewbox">
@@ -63,11 +64,11 @@ return (
                         <textarea placeholder="Review" value={body} id="reviewInput" rows="5" cols="33" onChange ={(e)=> setBody(e.target.value)}/>
                 </div>
         
-                <div id ="attachPhoto">
+                <div id ="attachPhotoEdit">
                     <label>Attach a photo: </label>
                     <input type="file"></input>
                 </div>
-                <button id ="formButton">Edit Review</button>
+                <button id ="editButton">Edit Review</button>
             </form>
         </>
         
