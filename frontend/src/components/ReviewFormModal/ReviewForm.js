@@ -1,38 +1,58 @@
 import "./ReviewFormModal.css";
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { createReview } from '../../store/reviews.js';
+import { createReview, editReview, getReview } from '../../store/reviews.js';
 
-const ReviewForm = ({setShowModal}) => {
+const ReviewForm = ({setShowModal, currUserReviewId}) => {
 
     // let business = useSelector(getBusiness(businessId));
-    
     const { businessId } = useParams();
     const [rating, setRating] = useState(3);
     const [body, setBody] = useState();
     const currentUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
+   
+
+    
+    const revieww = useSelector(getReview(currUserReviewId));
+    
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = {
-            rating,
-            body,
-            businessId: Number(businessId),
-            authorId: currentUser.id
+       
+        if (currUserReviewId){
+            const data = {
+                rating,
+                body,
+                businessId: Number(businessId),
+                authorId: currentUser.id,
+                createdAt: revieww.createdAt // need to get review from get Review thunk . commented out above
+            }
+            dispatch(editReview(data));
+        } else {
+            const data = {
+                rating,
+                body,
+                businessId: Number(businessId),
+                authorId: currentUser.id
+            }
+            // console.log(data);
+            dispatch(createReview(data));
+            setShowModal(false);
         }
-        // console.log(data);
-        dispatch(createReview(data));
-        setShowModal(false);
     }
+
+ 
 
     return (
         <div id="wholeModal">
+          {console.log(currUserReviewId)}
         {/* put business name for create title */}
-            <h1 id="CreateTitle">Create a Review:</h1> 
+            <h1 id="CreateTitle">{currUserReviewId? "Edit a Review" : "Create a Review:" }</h1> 
             <form id ="form" onSubmit={handleSubmit}>
-
+                {/* {console.log(review)} */}
                 <div id="reviewbox">
                     <label id ="ratingInput"> Rating: 
                         <label> 1
@@ -59,7 +79,7 @@ const ReviewForm = ({setShowModal}) => {
 
                 <div id ="attachPhoto">
                     <label>Attach a photo: </label>
-                    <input type="file"></input>
+                    <input type="file" ></input>
                 </div>
             <button id ="formButton">Post Review</button>
             </form>

@@ -14,7 +14,10 @@ export const removeReview = (reviewId) => ({
     reviewId
 });
 
-
+export const getReview = (reviewId) => (store) => {
+    if(store.reviews && store.reviews[reviewId]) return store.reviews[reviewId];
+    return null;
+}
 
 
 export const createReview = (reviewData) => async (dispatch) =>{

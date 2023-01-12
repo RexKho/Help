@@ -135,18 +135,20 @@ require "open-uri"
     puts "Creating Reviews..."
 
     Review.create!({
+      rating: 3,
+      body: "Just a tire shop. Not that great",
+      author_id: 3,
+      business_id: 1
+    })
+
+
+    Review.create!({
       rating: 5,
       body: "I LOVE TIRES OMG I COME HERE EVERYDAY",
       author_id: 2,
       business_id: 1
     })
 
-    Review.create!({
-      rating: 3,
-      body: "Just a tire shop. Not that great",
-      author_id: 3,
-      business_id: 1
-    })
 
     Review.create!({
       rating: 4,
@@ -156,18 +158,20 @@ require "open-uri"
     })
 
     Review.create!({
+      rating: 5,
+      body: "Very nice safeway. Gorgeous mountain in the back. Must be magic since other review doesn't have it there. ",
+      author_id: 5,
+      business_id: 2
+    })
+
+
+    Review.create!({
       rating: 1,
       body: "Couldn't even get inside, people sleeping blocked the door.",
       author_id: 2,
       business_id: 2
     })
 
-    Review.create!({
-      rating: 5,
-      body: "Very nice safeway. Gorgeous mountain in the back. Must be magic since other review doesn't have it there. ",
-      author_id: 5,
-      business_id: 2
-    })
 
     Review.create!({
       rating: 4,
@@ -219,7 +223,13 @@ require "open-uri"
     })
 
     puts "Adding pictures..."
+
     review = Review.find_by_id(1)
+    review.photos.attach(
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review1/americaTire1.jpg'), filename:'americaTire1'}
+      )
+
+    review = Review.find_by_id(2)
     review.photos.attach([
       # {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review1/dogtire1.jpg'), filename:'dogtire1'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review1/dogtire3.jpg'), filename:'dogtire2'},
@@ -234,13 +244,13 @@ require "open-uri"
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review3/tire3.jpg'), filename:'tire3'}
     ])
 
-    review = Review.find_by_id(4)
+    review = Review.find_by_id(5)
     review.photos.attach([
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review4/UnionCity1.jpg'), filename:'safeway1'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review4/UnionCity2.jpg'), filename:'safeway2'}
     ])
 
-    review = Review.find_by_id(5)
+    review = Review.find_by_id(4)
     review.photos.attach([
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review5/canmoresafeway1.jpeg'), filename:'safeway3'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review5/canmoresafeway2.jpg'), filename:'safeway4'},
@@ -250,6 +260,7 @@ require "open-uri"
   
     review = Review.find_by_id(6)
     review.photos.attach([
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review6/dimsumcover.jpg'), filename:'dimsumcover'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review6/dimsum1.jpg'), filename:'dimsum1'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review6/dimsum2.jpg'), filename:'dimsum2'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review6/dimsum3.jpg'), filename:'dimsum3'},
@@ -258,6 +269,7 @@ require "open-uri"
 
     review = Review.find_by_id(7)
     review.photos.attach([
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review7/costcocover.jpg'), filename:'costcocover'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review7/costco1.jpg'), filename:'costco1'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review7/costco2.jpg'), filename:'costco2'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review7/costco3.jpg'), filename:'costco3'},
@@ -266,6 +278,7 @@ require "open-uri"
 
     review = Review.find_by_id(8)
     review.photos.attach([
+      {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review8/ramencover.jpg'), filename:'ramencover'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review8/ramen1.jpg'), filename:'ramen1'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review8/ramen2.jpg'), filename:'ramen2'},
       {io: URI.open('https://rex-help-seeds.s3.us-west-1.amazonaws.com/review8/ramen3.jpg'), filename:'ramen3'},

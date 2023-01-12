@@ -1,21 +1,22 @@
 #busName{
     /* color: #fff; */
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-size: 48px;
+    font-size: 80px;
     font-weight: 700;
     letter-spacing: -0.4px;
     line-height: 56px;
-    word-break: break-word !important;
-    overflow-wrap: break-word !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
     display: inline;
     margin-left: 10%;
+    color: #fff;
 }
-
-
 #busDes{
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-size: 20px;
-    margin-left: 15%;
+    font-size: 18px;
+    margin-left: 12%;
+    padding-top: 20px;
+    color: rgba(45,46,47,1);
 }
 
 .coordinates{
@@ -23,6 +24,46 @@
     margin-left: 10%;
     margin-bottom: 10px;
     margin-top: 10px;
+}
+#aboutBusiness{
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    line-height: 28px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    color: rgba(45,46,47,1);
+    display: inline;
+    margin-left: 10%;
+}
+
+#desContainer{
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.topPicture{
+    position: relative;
+    text-align: center;
+    color: white;
+    display: flex;
+    -webkit-text-stroke: 2px black;
+}
+
+.bottom-left{
+    position: absolute;
+    bottom: 40px;
+    left: 16px;
+}
+
+
+#pictureontop{
+
+    max-height: 400px;
 }
 
 #reviewPicture{
@@ -46,9 +87,9 @@
 }
 
 #createReviewout {
-    margin-left: 45%;
-    margin-bottom: 10px;
-    margin-top: 15px;
+    margin-left: 10%;
+    margin-bottom: 12px;
+    margin-top: 20px;
 }
 
 #EditDelete{

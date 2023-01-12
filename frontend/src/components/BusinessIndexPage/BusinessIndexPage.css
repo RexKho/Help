@@ -4,7 +4,7 @@
     width: 30%;
     height: 30%;
     margin-top: 20px;
-
+    box-shadow: rgba(0, 0, 0, .2) 0px 22px 70px 4px;
     border: 1px solid #ebebeb;
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }

@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import BusinessIndexPage from "./components/BusinessIndexPage";
 import BusinessShowPage from "./components/BusinessShowPage";
 import GoogleMapp from "./components/GoogleMap";
+import EditFrom from "./components/EditReview";
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
 
         <Route path="/businesses/:businessId">
           <BusinessShowPage />
+        </Route>
+
+        <Route path="/editreview">
+          <EditFrom />
         </Route>
 
         <Route path='/login'>
