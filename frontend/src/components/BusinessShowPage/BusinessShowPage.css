@@ -100,7 +100,11 @@
     border: 10px;
     /* font: inherit; */
     float: right; 
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 } 
+
+
+
 
 #reviewList{
     margin-bottom: 140px;

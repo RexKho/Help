@@ -47,7 +47,7 @@ const BusinessShowPage = () => {
                 <>
                     <button id="EditDelete" onClick={()=> handleClick(review)}>Delete Review</button>
                     
-                    <NavLink id="EditDelete" to={{pathname: `/${businessId}/editreview/${review.id}`}} state={{review: review}}>Edit Review</NavLink>
+                    <NavLink  to={{pathname: `/${businessId}/editreview/${review.id}`}} state={{review: review}}><button id="EditDelete">Edit Review</button></NavLink>
                     {/* <button id="EditDelete" onClick={()=> setShowModal(true)}>Edit Review</button> */}
                 
                 </>
