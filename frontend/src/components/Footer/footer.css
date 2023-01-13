@@ -1,6 +1,4 @@
 .footer{
-    /* display: block; */
-    /* justify-content: center; */
     background-color: #d32323;
     padding: 10px 40px;
     pointer-events: auto;
@@ -9,12 +7,9 @@
     left:0;
     right:0;
     height:80px;
-    /* position: relative;
-    margin-top: -10px; */
 }
 
 #footerName{
-   
     display: flex;
     justify-content: center;
     font-size: 40px;

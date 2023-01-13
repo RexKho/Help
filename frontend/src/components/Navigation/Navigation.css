@@ -19,9 +19,7 @@
 }
 
 #dropDownButton{
-    /* float: right; */
     color: #d32323;
-   
 }
 
 #containerList{
@@ -32,7 +30,6 @@
 
 #seslinks {
  margin-left: 50px;  
- /* margin-right: 50px; */
 }
 
 .navbutton {
@@ -62,5 +59,4 @@
 
 #logo{
     max-width: 100px;
-    
 }

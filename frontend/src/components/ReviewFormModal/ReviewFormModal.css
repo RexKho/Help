@@ -1,8 +1,6 @@
 #wholeModal{
-    /* display: flex; */
     justify-content: column;
 }
-
 
 #CreateTitle {
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -45,10 +43,6 @@
     border-radius: 4px;
     max-width: 630px;
     min-height: 250px;
-    /* display: flex;
-    align-items: center;
-    justify-content: column; */
-    
 }
 
 #ratingInput{
@@ -65,7 +59,6 @@
     justify-content: center;
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 17px;
-    /* font-weight: 700; */
     width: 300px;
     height: 200px;
 }

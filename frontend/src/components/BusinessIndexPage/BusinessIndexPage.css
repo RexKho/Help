@@ -1,6 +1,4 @@
 .business-container {
-    /* flex-wrap: wrap;
-    justify-content: space-evenly; */
     width: 30%;
     height: 30%;
     margin-top: 20px;
@@ -29,9 +27,6 @@
     display: flex;
     justify-content: space-evenly;  
     flex-wrap: wrap;
-    
-    /* float: left;
-    width: 33.333%; */
     padding: 40px;
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 14px;
@@ -63,8 +58,6 @@
 #prevPicture{
     display: flex;
     justify-content: center;
-    /* object-fit: cover; */
-    /* gap: 40px; */
     margin: auto;
     max-height: 150px;
     max-width: 100px;

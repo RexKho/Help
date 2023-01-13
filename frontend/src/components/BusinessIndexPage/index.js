@@ -1,4 +1,3 @@
-// import { useHistory } from "react-router-dom";
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,20 +8,15 @@ import './BusinessIndexPage.css';
 
 const BusinessIndexPage = () => {
 
-
-
     const businesses = useSelector((store)=> Object.values(store.businesses));
-    
     const dispatch = useDispatch();
 
-    // const history = useHistory();
     useEffect(()=>{
         dispatch(fetchBusinesses());
     }, [dispatch]);
 
     return (
         <>
-           
           <BusinessList businesses={businesses} />
         </>
     );

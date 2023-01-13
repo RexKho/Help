@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './LoginForm.css';
 
-
 function LoginFormPage() {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
@@ -29,13 +28,11 @@ function LoginFormPage() {
                 else if (data) setErrors([data]);
                 else setErrors([res.statusText]);
             });
-
     }
     
     const setDemo = () => {
         setCredential(`Demo-lition`);
         setPassword(`password`);
-
     }
 
     const handleDemo = (e) => {
@@ -63,13 +60,9 @@ function LoginFormPage() {
                 <ul>
                     {errors.map(error => <li key ={error}>{error}</li>)}
                 </ul>
-                
                     <input type="text" value = {credential} onChange ={(e) => setCredential(e.target.value)} required placeholder="Email"></input>
-                
                 <br></br>
-                
                     <input type="password" value = {password} onChange={(e)=> setPassword(e.target.value)} required placeholder="Password"></input>
-                
                 <br></br>
                 <button type="submit" className ="button">Log In</button>
             </form>

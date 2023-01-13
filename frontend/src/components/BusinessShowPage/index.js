@@ -7,8 +7,6 @@ import Review from "../ReviewShow";
 import './BusinessShowPage.css';
 import ReviewformModal from "../ReviewFormModal";
 import { NavLink } from "react-router-dom";
-import EditFrom from "../EditReview";
-import { useContext } from "react";
 
 const BusinessShowPage = () => {
     const { businessId } = useParams();
@@ -24,15 +22,10 @@ const BusinessShowPage = () => {
         }
     })
     
-    
-    
     let currUserReviewId;
-    
     
     useEffect(()=>{
         dispatch(fetchBusiness(businessId));
-        //    console.log(reviewss.author);
-        //    console.log(currentUser);
     }, [dispatch, businessId])
     
     const handleClick = (review) =>{
@@ -41,15 +34,10 @@ const BusinessShowPage = () => {
     
     const editDeleteButton = (review) => {
         if (currentUser && review.author === currentUser.username) {
-            // currUserReviewId = review.id;
-            
             return(
                 <>
                     <button id="EditDelete" onClick={()=> handleClick(review)}>Delete Review</button>
-                    
                     <NavLink  to={{pathname: `/${businessId}/editreview/${review.id}`}} state={{review: review}}><button id="EditDelete">Edit Review</button></NavLink>
-                    {/* <button id="EditDelete" onClick={()=> setShowModal(true)}>Edit Review</button> */}
-                
                 </>
             ) 
         }
@@ -87,7 +75,6 @@ const BusinessShowPage = () => {
                 <h1 id="aboutBusiness">About the Business</h1>
                 <h2 id="busDes" >{business.description}</h2>
             </div>
-
 
             {createReviewButton(currUserReviewId)}
             <div id="reviewList">

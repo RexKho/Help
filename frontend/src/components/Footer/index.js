@@ -4,7 +4,6 @@ import './footer.css';
 
 function Footer(){
 
-
     return (
         <div className="footer">
             <div className="footerContents">
@@ -16,8 +15,6 @@ function Footer(){
             </div>
         </div>
     )
-
-
 }
 
 export default Footer;

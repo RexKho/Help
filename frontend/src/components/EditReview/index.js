@@ -1,12 +1,12 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { editReview, getReview } from "../../store/reviews";
 import "./EditReview.css"
 
 
-const EditFrom = (props) => {
+const EditFrom = () => {
 
 const dispatch = useDispatch();
 const {businessId} = useParams();
@@ -75,13 +75,5 @@ return (
         
     )
 }
-    export default EditFrom;
-    
-    
-    //What I have tried:
-    // 1. passing in review in editDeleteButton to use as a prop 
-    //    and deconstruct. Review would come up undefined
-    // 2. use withRouter, does not get passed in. I can set the
-    //    default to {} but will always be {}
-    // 3. Tried to use useContext but already have a default function exported
-    //
+
+export default EditFrom;

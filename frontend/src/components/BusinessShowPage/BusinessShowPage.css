@@ -1,5 +1,4 @@
 #busName{
-    /* color: #fff; */
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 80px;
     font-weight: 700;
@@ -62,13 +61,11 @@
 
 
 #pictureontop{
-
     max-height: 400px;
 }
 
 #reviewPicture{
     max-height: 200px;
-    /* max-width: 50px; */
 }
 
 .scroller{
@@ -98,7 +95,6 @@
     padding: 8px;
     margin-top: 8px;
     border: 10px;
-    /* font: inherit; */
     float: right; 
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 } 

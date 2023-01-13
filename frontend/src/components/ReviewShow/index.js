@@ -2,12 +2,9 @@ import React from "react";
 import './ReviewShow.css';
 import { formatDateTime } from '../util/dateUtil.js';
 
-
-
 const Review = ({review}) => {
     const { author, body, createdAt, rating } = review;
     const created = formatDateTime(createdAt);
-
 
     return(
         <div>
