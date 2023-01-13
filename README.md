@@ -6,7 +6,7 @@ Help is a clone of an early version of a review page like [yelp](https://www.yel
 
 ## Technologies
 
-Help was built using Ruby on Rails as the backend, React-Redux as the front end and PostgresSQL as the database management system. The review star, sign up, and log in/out icons are from [Font Awesome](https://fontawesome.com). The Logo is from [Logo](https://logo.com/).
+Help was built using Ruby on Rails as the backend, React-Redux as the front end and PostgresSQL as the database management system. The review star, sign up, and log in/out icons are from [Font Awesome](https://fontawesome.com). The Logo is from [Logo.com](https://logo.com/).
 
 ## Features
 
