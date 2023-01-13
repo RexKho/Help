@@ -23,7 +23,6 @@ const history = useHistory();
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(rating);
     const data = {
         rating,
         body,
