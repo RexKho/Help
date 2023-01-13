@@ -13,7 +13,8 @@ Help was built using Ruby on Rails as the backend, React-Redux as the front end 
 Businessess will populate on the splash page where users can select one to view. On the business show page, users will be able to add a review to the business. A review can only be edited and deleted by the author who created it. Each Review also has a rating associated with it that can be edited as well. 
 
 ### Review CRUD
-https://user-images.githubusercontent.com/98872331/212379581-2efe4148-c33a-4dab-a4b4-6382321f280f.mov
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/98872331/212380357-1517c5ad-9ee3-4636-bbdd-fa92fc53d670.gif)
+
 
 
 ## Future Plans
