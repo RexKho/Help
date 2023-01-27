@@ -34,12 +34,12 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('rating', rating);
-        formData.append('body', body);
-        formData.append('business_id', businessId);
-        formData.append('author_id', currentUser.id);
+        formData.append('review[rating]', rating);
+        formData.append('review[body]', body);
+        formData.append('review[business_id]', businessId);
+        formData.append('review[author_id]', currentUser.id);
         if (photoFile) {
-            formData.append('review[photo]', photoFile);
+            formData.append('review[photos]', photoFile);
         }
         const data = {};
         for(let pair of formData.entries()){
@@ -59,7 +59,7 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
         //     const message = await response.json();
         //     console.log(message.message);
         // }
-        dispatch(createReview(data,businessId));
+        dispatch(createReview(formData, businessId));
         setShowModal(false);
         
     }
