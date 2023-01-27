@@ -20,12 +20,13 @@ export const getReview = (reviewId) => (store) => {
 }
 
 
-export const createReview = (reviewData) => async (dispatch) =>{
-    const response = await csrfFetch(`/api/businesses/${reviewData.businessId}/reviews`,{
+export const createReview = (reviewData, businessId) => async (dispatch) =>{
+    console.log(reviewData);
+    const response = await csrfFetch(`/api/businesses/${businessId}/reviews`,{
         method: "POST",
         body: JSON.stringify(reviewData),
         headers: {
-            "Content-Type": "application/json"
+            "X-CSRF-Token": sessionStorage.getItem("X-CSRF-Token")
         }
     });
     if(response.ok) {
