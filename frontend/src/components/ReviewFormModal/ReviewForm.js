@@ -12,6 +12,7 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
     const [photoUrl, setPhotoUrl] = useState(null);
     const [rating, setRating] = useState(3);
     const [body, setBody] = useState();
+    const [imageFiles, setImageFiles] = useState([]);
     const currentUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
 
@@ -23,7 +24,7 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
             const fileReader = new FileReader();
             fileReader.readAsDataURL(file);
             fileReader.onload = () => {
-                setPhotoFile(file);
+                setImageFiles([...imageFiles, file]);
                 setPhotoUrl(fileReader.result);
             };
         }
@@ -38,8 +39,11 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
         formData.append('review[body]', body);
         formData.append('review[business_id]', businessId);
         formData.append('review[author_id]', currentUser.id);
-        if (photoFile) {
-            formData.append('review[photos]', photoFile);
+        if (imageFiles.length !== 0) {
+            imageFiles.forEach(image => {
+                formData.append('review[photos][]', image);
+
+            })
         }
         const data = {};
         for(let pair of formData.entries()){
@@ -93,7 +97,7 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
 
                 <div id ="attachPhoto">
                     <label>Attach a photo: </label>
-                    <input type="file" onChange={handleFile}></input>
+                    <input type="file" onChange={handleFile} multiple></input>
                     <h3>Image preview</h3>
                     {preview}
                     
