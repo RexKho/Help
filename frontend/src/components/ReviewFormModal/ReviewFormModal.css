@@ -29,6 +29,10 @@
    
 }
 
+#createButton:hover{
+   opacity: 50%;
+}
+
 #form{
     display: flex;
     justify-content: column;

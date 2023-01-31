@@ -33,7 +33,11 @@
 }
 
 .navbutton {
-    color: white
+    color: white;
+}
+
+.navbutton:hover {
+    color: black;
 }
 
 #logoutbutton {
@@ -60,3 +64,4 @@
 #logo{
     max-width: 100px;
 }
+
