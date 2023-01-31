@@ -47,6 +47,11 @@
     justify-content: center;
 }
 
+#businessName:hover {
+    text-decoration: underline;
+    
+}
+
 #businessDescription {
     padding: 10px;
     display: flex;
@@ -71,3 +76,4 @@
 #mainContainer{
     margin-bottom: 150px;
 }
+
