@@ -7,6 +7,7 @@ import Review from "../ReviewShow";
 import './BusinessShowPage.css';
 import ReviewformModal from "../ReviewFormModal";
 import { NavLink } from "react-router-dom";
+import Home from "../GoogleMap";
 
 const BusinessShowPage = () => {
     const { businessId } = useParams();
@@ -67,13 +68,12 @@ const BusinessShowPage = () => {
                     <img src={reviewss[0].photoUrl[0]} alt="top picture" width="100%" id="pictureontop"></img>
                 <h1 id="busName" className="bottom-left"> {business.name}</h1>
             </div>
-
-                <h3 className="coordinates" >Long: {business.long}</h3>
-                <h3 className="coordinates" >Lat: {business.lat}</h3>
-
-            <div id="desContainer">
-                <h1 id="aboutBusiness">About the Business</h1>
-                <h2 id="busDes" >{business.description}</h2>
+            <div id="descAndMap">
+                <div id="desContainer">
+                    <h1 id="aboutBusiness">About the Business</h1>
+                    <h2 id="busDes" >{business.description}</h2>
+                </div>
+                <Home latitude={business.lat} longitude={business.long}></Home>
             </div>
 
             {createReviewButton(currUserReviewId)}
