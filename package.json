@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/RexKho/Help/issues"
   },
-  "homepage": "https://github.com/RexKho/Help#readme"
+  "homepage": "https://github.com/RexKho/Help#readme",
+  "dependencies": {
+    "@react-google-maps/api": "^2.18.1"
+  }
 }
