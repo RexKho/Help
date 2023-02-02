@@ -7,6 +7,7 @@ import './BusinessIndexPage.css';
 import { StringParam, useQueryParam } from 'use-query-params';
 
 
+
 const BusinessIndexPage = () => {
 
     const businesses = useSelector((store)=> Object.values(store.businesses));
@@ -14,8 +15,8 @@ const BusinessIndexPage = () => {
     const [query, setQuery] = useQueryParam('query', StringParam);
 
     useEffect(()=>{
-        dispatch(fetchBusinesses({query}));
-    }, [dispatch]);
+        dispatch(fetchBusinesses(query));
+    }, [dispatch, query]);
 
     return (
         <>

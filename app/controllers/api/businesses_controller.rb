@@ -2,11 +2,12 @@ class Api::BusinessesController < ApplicationController
     def index 
         # @businesses = Business.all 
 
-        search = params[:search].downcase.split(" ") if params[:search]
+        search = params[:query].downcase.split(" ") if params[:query]
 
         @filtered_businesses = []
 
-        if params[:search]
+        if params[:query]
+            
             search.each do |term|
                 @filtered_businesses << Business.where("LOWER(name) LIKE ?", "%#{term}%")
             end
