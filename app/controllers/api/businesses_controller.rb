@@ -14,7 +14,7 @@ class Api::BusinessesController < ApplicationController
             @filtered_businesses = Business.all
         end
 
-        @business = @filtered_businesses
+        @businesses = @filtered_businesses
         render :index
     end
 
