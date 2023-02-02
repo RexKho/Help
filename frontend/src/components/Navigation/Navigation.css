@@ -8,19 +8,11 @@
     justify-content: space-between;
     background-color: #d32323;
     padding: 24px 40px;
-   
+   align-items: flex-start;
     pointer-events: auto;
 }
 
-#wholeDropDown{
-    float: right;
-      position: relative;
-  flex-direction: column;
-}
 
-#dropDownButton{
-    color: #d32323;
-}
 
 #containerList{
     display: flex;

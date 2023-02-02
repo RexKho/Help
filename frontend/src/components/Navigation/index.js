@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../../Assets/Images/helpLogo.png"
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
+import SearchBar from '../SearchBar';
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
@@ -17,6 +18,7 @@ function Navigation() {
     if (sessionUser) {
         sessionLinks = (
             <div id="containerList">
+         
                 <p id="welcomeMessage">Welcome {sessionUser.username}</p>
                 <button onClick={logout} id="logoutbutton">
                             <i className="fa-sharp fa-solid fa-right-from-bracket"></i>
@@ -44,8 +46,9 @@ function Navigation() {
             <ul id="navbar">
                 <NavLink exact to="/" className="navbutton">
                     <img src={logo} alt="logo" id="logo"></img>
-                    
                 </NavLink>
+                <SearchBar/>
+                    
                 <div>
                     {sessionLinks}
                 </div>
