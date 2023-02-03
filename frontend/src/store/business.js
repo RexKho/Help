@@ -28,6 +28,8 @@ export const getBusiness = (businessId) => (state) => {
 
 export const fetchBusinesses = (query) => async (dispatch) => {
     let response;
+    
+    console.log("hieee")
     if (query) {
         response= await csrfFetch(`/api/businesses?&query=${query}`)
     } else {

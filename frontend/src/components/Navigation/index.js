@@ -47,7 +47,7 @@ function Navigation() {
                 <NavLink exact to="/" className="navbutton">
                     <img src={logo} alt="logo" id="logo"></img>
                 </NavLink>
-                <SearchBar/>
+           
                     
                 <div>
                     {sessionLinks}

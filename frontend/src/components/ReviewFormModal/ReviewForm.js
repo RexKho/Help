@@ -1,9 +1,9 @@
 import "./ReviewFormModal.css";
 
 import { useParams } from 'react-router-dom';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { createReview, editReview, getReview } from '../../store/reviews.js';
+import { createReview, getReview } from '../../store/reviews.js';
 
 const ReviewForm = ({setShowModal, currUserReviewId}) => {
 
