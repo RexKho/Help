@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBusinesses } from "../../store/business";
@@ -13,17 +13,18 @@ const BusinessIndexPage = () => {
 
     const businesses = useSelector((store)=> Object.values(store.businesses));
     const dispatch = useDispatch();
+    const [term, setTerm] = useState();
     const [query, setQuery] = useQueryParam('query', StringParam);
-    
+   
     useEffect(()=>{
         dispatch(fetchBusinesses(query));
     }, [query]);
     
     return (
         <>
-            <SearchBar setQuery={setQuery} query={query}/>
-          <BusinessList businesses={businesses} />
-        {console.log(query)}
+            <SearchBar setTerm={setTerm}/>
+            <BusinessList businesses={businesses} term={term}/>
+        
         </>
     );
 };

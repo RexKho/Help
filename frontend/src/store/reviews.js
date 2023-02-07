@@ -21,7 +21,6 @@ export const getReview = (reviewId) => (store) => {
 
 
 export const createReview = (reviewData, businessId) => async (dispatch) =>{
-    console.log(reviewData);
     const response = await csrfFetch(`/api/businesses/${businessId}/reviews`,{
         method: "POST",
         body: reviewData

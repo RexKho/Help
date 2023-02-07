@@ -28,7 +28,7 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
                 setPhotoUrl(fileReader.result);
             };
         }
-        console.log(photoUrl);
+       
       
     }
     
@@ -51,18 +51,6 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
             console.log(pair[0], pair[1])
         }
 
-
-        // const response = await csrfFetch(`/api/businesses/${businessId}/reviews`,{
-        //     method: "POST",
-        //     body: formData,
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     }
-        // });
-        // if(response.ok) {
-        //     const message = await response.json();
-        //     console.log(message.message);
-        // }
         dispatch(createReview(formData, businessId));
         setShowModal(false);
         

@@ -1,21 +1,18 @@
-import { useHistory } from "react-router-dom";
 import './SearchBar.css';
 
 
-const SearchBar = ({query, setQuery}) => {
-    const history = useHistory();
+const SearchBar = ({setTerm}) => {
+
     const handleSearch = async(e) => {
         if (e.key === 'Enter') {
-            history.push(`/businesses?query=${e.target.value}`);
-            setQuery(e.target.value);
-            console.log("Query:")
-            console.log(query)
+           setTerm(e.target.value)
         }
+        
     }
 
     return (
         <div>
-            <input id="searchBar" onChange={e => setQuery(e.target.value)}type="text" placeholder="Search Businesses" onKeyDown={handleSearch}></input>
+            <input id="searchBar" type="text" placeholder="Search Businesses" onKeyDown={handleSearch} onChange={(e)=>{setTerm(e.target.value)}}></input>
         </div>
     )
 }
