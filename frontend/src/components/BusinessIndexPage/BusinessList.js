@@ -20,7 +20,7 @@ const BusinessList = ({businesses, term}) => {
     } else {
         listItems =(
             businesses?.map((business, idx)=>(
-                <BusinessListItem business={business} key={idx} />
+                    <BusinessListItem business={business} key={idx} />
                 )
             )
         )
@@ -29,7 +29,7 @@ const BusinessList = ({businesses, term}) => {
 
     return (
         <div id="mainContainer">
-            <h1 id="title">Local Businesses</h1>
+            <h1 id="title">{term? "Search Results:" : "Local Businesses" }</h1>
             <div id ="module">              
             {listItems}
             </div>

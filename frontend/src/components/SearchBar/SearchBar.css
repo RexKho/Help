@@ -1,8 +1,9 @@
 #searchBar {
-    width: 150%;
+    width: 90%;
     box-sizing: border-box;
     /* left: 60px; */
     /* position: relative; */
-    margin-left: auto;
+    margin-left: 5%;
     margin-right: auto;
+    
 }
