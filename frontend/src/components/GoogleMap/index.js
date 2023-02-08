@@ -6,7 +6,7 @@ import "./GoogleMap.css"
 export default function Home({latitude, longitude}) {
    
     const {isLoaded} = useLoadScript({
-        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+        googleMapsApiKey: "AIzaSyDC9jFgU_W8HjyX9IHYq5k28Mqo-QEv_Qg"
     })
     
 
