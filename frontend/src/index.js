@@ -9,8 +9,7 @@ import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session';
 import * as businessActions from './store/business';
 import { ModalProvider } from './context/modal';
-import { QueryParamProvider } from 'use-query-params';
-import { ReactRouter5Adapter } from 'use-query-params/adapters/react-router-5';
+
 const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
@@ -34,9 +33,7 @@ function Root() {
     <ModalProvider>
       <Provider store={store}>
         <BrowserRouter>
-          <QueryParamProvider adapter={ReactRouter5Adapter}>
             <App />
-          </QueryParamProvider>
         </BrowserRouter>
       </Provider>
     </ModalProvider>

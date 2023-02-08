@@ -3,12 +3,11 @@ import "./ReviewFormModal.css";
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { createReview, getReview } from '../../store/reviews.js';
+import { createReview } from '../../store/reviews.js';
 
-const ReviewForm = ({setShowModal, currUserReviewId}) => {
+const ReviewForm = ({setShowModal, currUserReviewId, errors, setErrors}) => {
 
     const { businessId } = useParams();
-    const [photoFile, setPhotoFile] = useState(null);
     const [photoUrl, setPhotoUrl] = useState(null);
     const [rating, setRating] = useState(3);
     const [body, setBody] = useState();
@@ -16,7 +15,13 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
     const currentUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
 
-    const revieww = useSelector(getReview(currUserReviewId));
+
+    const reviewss= useSelector((state)=> {
+        if (state.reviews){
+            return Object.values(state.reviews);
+        }
+    })
+
 
     const handleFile = e => {
         const file = e.currentTarget.files[0];
@@ -34,6 +39,7 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
+       
         const formData = new FormData();
         formData.append('review[rating]', rating);
         formData.append('review[body]', body);
@@ -42,17 +48,32 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
         if (imageFiles.length !== 0) {
             imageFiles.forEach(image => {
                 formData.append('review[photos][]', image);
-
             })
         }
         const data = {};
         for(let pair of formData.entries()){
             data[pair[0]] = pair[1];
-            console.log(pair[0], pair[1])
         }
 
-        dispatch(createReview(formData, businessId));
-        setShowModal(false);
+        dispatch(createReview(formData, businessId))
+        .catch(async (res) => {
+            let data;
+            try{
+                setShowModal(true);
+                data = await res.clone().json();
+            } catch{
+                data = await res.text();
+            }
+            if (data?.errors) setErrors(data.errors);
+            else if (data) setErrors([data]);
+            else setErrors([res.statusText]);
+        });
+       console.log(errors);
+        if (errors){
+            setShowModal(false);
+        }
+        setErrors([]);
+        
         
     }
 
@@ -62,6 +83,9 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
         <div id="wholeModal">
             <h1 id="CreateTitle">{currUserReviewId? "Edit a Review" : "Create a Review:" }</h1> 
             <form id ="form" onSubmit={handleSubmit}>
+                <ul id="error">
+                    {errors.map(error => <li key={error}>{error}</li>)}
+                </ul>
                 <div id="reviewbox">
                     <label id ="ratingInput"> Rating: 
                         <label> 1

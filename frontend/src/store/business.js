@@ -26,27 +26,15 @@ export const getBusiness = (businessId) => (state) => {
 
 
 
-export const fetchBusinesses = (query) => async (dispatch) => {
-    let response;
-    
-    if (query) {
-        response= await csrfFetch(`/api/businesses?&query=${query}`)
-    } else {
-        response = await csrfFetch('/api/businesses');
-    }
+export const fetchBusinesses = () => async (dispatch) => {
+    const response = await csrfFetch('/api/businesses');
     if (response.ok) {
         const businesses = await response.json();
         dispatch(setBusinesses(businesses));
     }
 };
 
-export const fetchSearchBusinesses = (searchTerm) => async (dispatch) => {
-    const response = await fetch(`/api/search?query=${searchTerm}`);
-    if (response.ok) {
-        const data = await response.json();
-        dispatch(setBusinesses(data));
-    }
-}
+
 
 export const fetchBusiness = (businessId) => async (dispatch) => {
     const response = await csrfFetch(`/api/businesses/${businessId}`);
