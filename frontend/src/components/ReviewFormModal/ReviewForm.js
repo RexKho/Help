@@ -1,9 +1,9 @@
 import "./ReviewFormModal.css";
 
 import { useParams } from 'react-router-dom';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { createReview, editReview, getReview } from '../../store/reviews.js';
+import { createReview, getReview } from '../../store/reviews.js';
 
 const ReviewForm = ({setShowModal, currUserReviewId}) => {
 
@@ -28,7 +28,7 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
                 setPhotoUrl(fileReader.result);
             };
         }
-        console.log(photoUrl);
+       
       
     }
     
@@ -51,18 +51,6 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
             console.log(pair[0], pair[1])
         }
 
-
-        // const response = await csrfFetch(`/api/businesses/${businessId}/reviews`,{
-        //     method: "POST",
-        //     body: formData,
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     }
-        // });
-        // if(response.ok) {
-        //     const message = await response.json();
-        //     console.log(message.message);
-        // }
         dispatch(createReview(formData, businessId));
         setShowModal(false);
         
