@@ -16,6 +16,7 @@ const BusinessShowPage = () => {
     
     const business = useSelector((store) => store.businesses[businessId]);
     const currentUser = useSelector(state => state.session.user);
+    const [errors, setErrors] = useState([]);
     
     const reviewss= useSelector((state)=> {
         if (state.reviews){
@@ -31,6 +32,7 @@ const BusinessShowPage = () => {
     
     const handleClick = (review) =>{
         dispatch(deleteReview(business.id, review.id));
+         setErrors([]);
     }
     
     const editDeleteButton = (review) => {
@@ -48,7 +50,7 @@ const BusinessShowPage = () => {
         if (currentUser){
             return (
                 <div id="createReviewout">
-                    <ReviewformModal currUserReviewId = {currUserReviewId} showModal={showModal}  setShowModal={setShowModal} />
+                    <ReviewformModal currUserReviewId = {currUserReviewId} showModal={showModal}  setShowModal={setShowModal} errors={errors} setErrors={setErrors}/>
                 </div>
             )
         }
