@@ -8,7 +8,6 @@ import { createReview, getReview } from '../../store/reviews.js';
 const ReviewForm = ({setShowModal, currUserReviewId}) => {
 
     const { businessId } = useParams();
-    const [photoFile, setPhotoFile] = useState(null);
     const [photoUrl, setPhotoUrl] = useState(null);
     const [rating, setRating] = useState(3);
     const [body, setBody] = useState();
