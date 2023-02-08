@@ -14,6 +14,7 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
     const [imageFiles, setImageFiles] = useState([]);
     const currentUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
+    // const [errors, setErrors] = useState([]);
 
     const revieww = useSelector(getReview(currUserReviewId));
 
@@ -33,6 +34,7 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
+       
         const formData = new FormData();
         formData.append('review[rating]', rating);
         formData.append('review[body]', body);
@@ -41,17 +43,31 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
         if (imageFiles.length !== 0) {
             imageFiles.forEach(image => {
                 formData.append('review[photos][]', image);
-
             })
         }
         const data = {};
         for(let pair of formData.entries()){
             data[pair[0]] = pair[1];
-            console.log(pair[0], pair[1])
         }
 
         dispatch(createReview(formData, businessId));
-        setShowModal(false);
+        // .catch(async (res) => {
+        //     let data;
+        //     try{
+        //         data = await res.clone().json();
+        //     } catch{
+        //         data = await res.text();
+        //     }
+        //     if (data?.errors) setErrors(data.errors);
+        //     else if (data) setErrors([data]);
+        //     else setErrors([res.statusText]);
+        // });
+       
+        // if (errors.length === 0){
+            setShowModal(false);
+        // }
+        // setErrors([]);
+        
         
     }
 
@@ -61,6 +77,9 @@ const ReviewForm = ({setShowModal, currUserReviewId}) => {
         <div id="wholeModal">
             <h1 id="CreateTitle">{currUserReviewId? "Edit a Review" : "Create a Review:" }</h1> 
             <form id ="form" onSubmit={handleSubmit}>
+                {/* <ul>
+                    {errors.map(error => <li key={error}>{error}</li>)}
+                </ul> */}
                 <div id="reviewbox">
                     <label id ="ratingInput"> Rating: 
                         <label> 1
