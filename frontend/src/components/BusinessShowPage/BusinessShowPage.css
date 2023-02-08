@@ -73,7 +73,8 @@
 
 
 #pictureontop{
-    max-height: 40vw;
+    max-height: 30vw;
+    object-fit: cover;
 }
 
 #reviewPicture{
