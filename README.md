@@ -16,4 +16,5 @@ Businessess will populate on the splash page where users can select one to view.
 ![ezgif com-video-to-gif](https://user-images.githubusercontent.com/98872331/218612283-ee80e554-a6f5-421e-80bb-08ef96f85df3.gif)
 
 ### Search Feature
+![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/98872331/218614224-dd262662-5160-4057-9efa-2950bf5cea56.gif)
 
