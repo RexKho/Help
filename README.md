@@ -20,7 +20,7 @@ Businessess will populate on the splash page where users can select one to view.
 
 ## Significant Code
 
-### Review Form handle submit with Error handling and AWS 
+### AWS implementation in form with Error handling
 ```javascript
    const handleSubmit = async (e) => {
         e.preventDefault();
