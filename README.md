@@ -6,19 +6,14 @@ Help is a clone of an early version of a review page like [yelp](https://www.yel
 
 ## Technologies
 
-Help was built using Ruby on Rails as the backend, React-Redux as the front end and PostgresSQL as the database management system. The review star, sign up, and log in/out icons are from [Font Awesome](https://fontawesome.com). The Logo is from [Logo.com](https://logo.com/).
+Help was built using Ruby on Rails as the backend, React-Redux as the front end and PostgresSQL as the database management system. The review star, sign up, and log in/out icons are from [Font Awesome](https://fontawesome.com). The Logo is from [Logo.com](https://logo.com/). Google maps API was integrated for each business. 
 
 ## Features
 
 Businessess will populate on the splash page where users can select one to view. On the business show page, users will be able to add a review to the business. A review can only be edited and deleted by the author who created it. Each Review also has a rating associated with it that can be edited as well. 
 
 ### Review CRUD
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/98872331/212380357-1517c5ad-9ee3-4636-bbdd-fa92fc53d670.gif)
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/98872331/218612283-ee80e554-a6f5-421e-80bb-08ef96f85df3.gif)
 
+### Search Feature
 
-
-## Future Plans
- - Google maps API integration for each Business
- - Photo upload for each review
- - Star rating implementation
- - Business account that can create a business
