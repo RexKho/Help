@@ -68,7 +68,7 @@ const ReviewForm = ({setShowModal, currUserReviewId, errors, setErrors}) => {
             else if (data) setErrors([data]);
             else setErrors([res.statusText]);
         });
-       console.log(errors);
+       
         if (errors){
             setShowModal(false);
         }
