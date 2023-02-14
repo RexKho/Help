@@ -18,3 +18,45 @@ Businessess will populate on the splash page where users can select one to view.
 ### Search Feature
 ![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/98872331/218614224-dd262662-5160-4057-9efa-2950bf5cea56.gif)
 
+## Significant Code
+
+### Review Form handle submit with Error handling and AWS 
+```javascript
+   const handleSubmit = async (e) => {
+        e.preventDefault();
+       
+        const formData = new FormData();
+        formData.append('review[rating]', rating);
+        formData.append('review[body]', body);
+        formData.append('review[business_id]', businessId);
+        formData.append('review[author_id]', currentUser.id);
+        if (imageFiles.length !== 0) {
+            imageFiles.forEach(image => {
+                formData.append('review[photos][]', image);
+            })
+        }
+        const data = {};
+        for(let pair of formData.entries()){
+            data[pair[0]] = pair[1];
+        }
+
+        dispatch(createReview(formData, businessId))
+        .catch(async (res) => {
+            let data;
+            try{
+                setShowModal(true);
+                data = await res.clone().json();
+            } catch{
+                data = await res.text();
+            }
+            if (data?.errors) setErrors(data.errors);
+            else if (data) setErrors([data]);
+            else setErrors([res.statusText]);
+        });
+       
+        if (errors){
+            setShowModal(false);
+        }
+        setErrors([]);
+    }
+```
