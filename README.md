@@ -20,7 +20,7 @@ Businessess will populate on the splash page where users can select one to view.
 
 ## Significant Code
 
-### AWS implementation in form with Error handling
+### AWS S3 implementation in form with Error handling
 ```javascript
    const handleSubmit = async (e) => {
         e.preventDefault();
